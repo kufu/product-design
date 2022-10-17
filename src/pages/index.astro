@@ -1,0 +1,51 @@
+---
+type Frontmatter = {
+  title: string;
+  description?: string;
+  url: string;
+};
+
+const words = (await Astro.glob("./words/*.{md,mdx}")).sort();
+const columns = (await Astro.glob("./columns/*.{md,mdx}")).sort();
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Product Design Wiki</title>
+  </head>
+  <body>
+    <h1>Product Design Wiki</h1>
+    <section>
+      <h2>単語</h2>
+      <ul>
+        {
+          words.map((word) => {
+            return (
+              <li>
+                <a href={word.url}>{word.frontmatter.title}</a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </section>
+    <section>
+      <h2>コラム</h2>
+      <ul>
+        {
+          columns.map((column) => {
+            return (
+              <li>
+                <a href={column.url}>{column.frontmatter.title}</a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </section>
+  </body>
+</html>
