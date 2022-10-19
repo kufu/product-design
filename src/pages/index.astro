@@ -5,8 +5,7 @@ type Frontmatter = {
   url: string;
 };
 
-const words = (await Astro.glob("./words/*.{md,mdx}")).sort();
-const columns = (await Astro.glob("./columns/*.{md,mdx}")).sort();
+const documents = (await Astro.glob("./documents/[!_]*.{md,mdx}")).sort();
 ---
 
 <html lang="ja">
@@ -20,27 +19,12 @@ const columns = (await Astro.glob("./columns/*.{md,mdx}")).sort();
   <body>
     <h1>Product Design Wiki</h1>
     <section>
-      <h2>単語</h2>
       <ul>
         {
-          words.map((word) => {
+          documents.map((document) => {
             return (
               <li>
-                <a href={word.url}>{word.frontmatter.title}</a>
-              </li>
-            );
-          })
-        }
-      </ul>
-    </section>
-    <section>
-      <h2>コラム</h2>
-      <ul>
-        {
-          columns.map((column) => {
-            return (
-              <li>
-                <a href={column.url}>{column.frontmatter.title}</a>
+                <a href={document.url}>{document.frontmatter.title}</a>
               </li>
             );
           })
