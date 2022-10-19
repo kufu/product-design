@@ -19,9 +19,10 @@ yarn を推奨していますが、npm コマンドの利用も可能です。
 /
 ├── public/
 ├── src/
-│   └── documents/
-│       └── *.md
+│   └── layouts/
 │   └── pages/
+│       └── documents/
+│           └── *.md
 │       └── index.astro
 └── package.json
 ```
