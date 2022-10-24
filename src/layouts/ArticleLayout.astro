@@ -1,5 +1,10 @@
 ---
-const { content } = Astro.props;
+import remarkParse from 'remark-parse'
+
+const { content } = Astro.props
+
+const nextSharpNum = content.file.indexOf('src/', 1)
+const editUrl = `https://github.com/kufu/product-design-wiki/blob/main/${content.file.substring(nextSharpNum)}`
 ---
 
 <html>
@@ -9,5 +14,6 @@ const { content } = Astro.props;
   </head>
   <body>
     <slot />
+    <a href={editUrl}>ページを編集する</a>
   </body>
 </html>
