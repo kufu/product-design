@@ -1,5 +1,5 @@
 ---
-import remarkParse from 'remark-parse'
+import BaseLayout from './BaseLayout.astro'
 
 const { content } = Astro.props
 
@@ -7,13 +7,13 @@ const nextSharpNum = content.file.indexOf('src/', 1)
 const editUrl = `https://github.com/kufu/product-design-wiki/blob/main/${content.file.substring(nextSharpNum)}`
 ---
 
-<html>
-  <head>
-    <title>{content.title}</title>
-    <meta charset="UTF-8" />
-  </head>
-  <body>
-    <slot />
+<BaseLayout title={content.title}>
+  <header>
+    <a href="/">Product Design Wiki</a>
+  </header>
+  <h1>{content.title}</h1>
+  <slot />
+  <p>
     <a href={editUrl}>ページを編集する</a>
-  </body>
-</html>
+  </p>
+</BaseLayout>
