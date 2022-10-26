@@ -1,19 +1,15 @@
 ---
-import remarkParse from 'remark-parse'
+import SiteLayout from './SiteLayout.astro'
 
-const { content } = Astro.props
+const { content, title } = Astro.props
 
 const nextSharpNum = content.file.indexOf('src/', 1)
 const editUrl = `https://github.com/kufu/product-design-wiki/blob/main/${content.file.substring(nextSharpNum)}`
+
+console.log(title)
 ---
 
-<html>
-  <head>
-    <title>{content.title}</title>
-    <meta charset="UTF-8" />
-  </head>
-  <body>
-    <slot />
-    <a href={editUrl}>ページを編集する</a>
-  </body>
-</html>
+<SiteLayout title={title}>
+  <slot />
+  <a href={editUrl}>ページを編集する</a>
+</SiteLayout>

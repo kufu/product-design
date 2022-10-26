@@ -1,0 +1,24 @@
+---
+import '../css/style.css'
+
+const { title } = Astro.props
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <nav>
+      <a href="#">ホーム</a>
+      <a href="#">ブログ</a>
+      <a href="#">お問い合わせ</a>
+    </nav>
+    <article>
+      <slot />
+      <!-- ここにコンテンツが挿入されます -->
+    </article>
+  </body>
+</html>
