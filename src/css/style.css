@@ -1,27 +1,29 @@
-// https://github.com/kufu/smarthr-normalize-css/blob/main/src/index.ts
 body {
   overflow-wrap: break-word;
   font-family: system-ui, sans-serif;
 }
-a {
-  color: inherit;
-}
-img {
-  vertical-align: middle;
-}
-input,
-button,
-textarea {
-  margin: 0;
-  padding: 0;
-  border: none;
-  background-color: inherit;
-  color: inherit;
-}
+
 button,
 input,
 select,
 textarea {
   font-family: inherit;
   font-size: 100%;
+}
+
+article {
+  max-width: 45em;
+}
+
+header {
+  font-weight: bold;
+}
+
+footer {
+  margin-block-start: 1em;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }

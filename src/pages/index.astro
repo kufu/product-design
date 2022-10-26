@@ -1,11 +1,15 @@
 ---
-import SiteLayout from '../layouts/SiteLayout.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
 
 const documents = (await Astro.glob('./documents/[!_]*.{md,mdx}')).sort()
 ---
 
-<SiteLayout>
+<BaseLayout title="Product Design Wiki">
   <h1>Product Design Wiki</h1>
+  <p>
+    Product Design Wikiへようこそ。SmartHR
+    プロダクトデザイングループ内で獲得した知見、スキル定義、学習コンテンツを掲載しています。プロダクトデザインに関わる人はどなたでも利用・参加できます。
+  </p>
   <section>
     <ul>
       {
@@ -19,4 +23,4 @@ const documents = (await Astro.glob('./documents/[!_]*.{md,mdx}')).sort()
       }
     </ul>
   </section>
-</SiteLayout>
+</BaseLayout>

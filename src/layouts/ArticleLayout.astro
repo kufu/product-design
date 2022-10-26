@@ -1,15 +1,19 @@
 ---
-import SiteLayout from './SiteLayout.astro'
+import BaseLayout from './BaseLayout.astro'
 
-const { content, title } = Astro.props
+const { content } = Astro.props
 
 const nextSharpNum = content.file.indexOf('src/', 1)
 const editUrl = `https://github.com/kufu/product-design-wiki/blob/main/${content.file.substring(nextSharpNum)}`
-
-console.log(title)
 ---
 
-<SiteLayout title={title}>
+<BaseLayout title={content.title}>
+  <header>
+    <a href="/">Product Design Wiki</a>
+  </header>
+  <h1>{content.title}</h1>
   <slot />
-  <a href={editUrl}>ページを編集する</a>
-</SiteLayout>
+  <p>
+    <a href={editUrl}>ページを編集する</a>
+  </p>
+</BaseLayout>
