@@ -1,29 +1,26 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro'
+
 const documents = (await Astro.glob('./documents/[!_]*.{md,mdx}')).sort()
 ---
 
-<html lang="ja">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Product Design Wiki</title>
-  </head>
-  <body>
-    <h1>Product Design Wiki</h1>
-    <section>
-      <ul>
-        {
-          documents.map((document) => {
-            return (
-              <li>
-                <a href={document.url}>{document.frontmatter.title}</a>
-              </li>
-            )
-          })
-        }
-      </ul>
-    </section>
-  </body>
-</html>
+<BaseLayout title="Product Design Wiki">
+  <h1>Product Design Wiki</h1>
+  <p>
+    Product Design Wikiへようこそ。SmartHR
+    プロダクトデザイングループ内で獲得した知見、スキル定義、学習コンテンツを掲載しています。プロダクトデザインに関わる人はどなたでも利用・参加できます。
+  </p>
+  <section>
+    <ul>
+      {
+        documents.map((document) => {
+          return (
+            <li>
+              <a href={document.url}>{document.frontmatter.title}</a>
+            </li>
+          )
+        })
+      }
+    </ul>
+  </section>
+</BaseLayout>
