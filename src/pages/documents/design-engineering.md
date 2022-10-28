@@ -16,3 +16,4 @@ tag: idea,occupation
 
 - [Design engineer - Wikipedia](https://en.wikipedia.org/wiki/Design_engineer)
 - [Design engineering | Takram](https://ja.takram.com/careers/design-engineering)
+- [デザインエンジニアとフロントエンド (Inside Frontend \#3) - YouTube](https://www.youtube.com/watch?v=wK9Y7bz2crQ)
