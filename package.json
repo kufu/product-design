@@ -16,6 +16,7 @@
     "format:text": "textlint --fix 'content/**/*.md{,x}'"
   },
   "dependencies": {
+    "@astrojs/vercel": "^2.3.2",
     "astro": "^1.4.7"
   },
   "devDependencies": {
