@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 
-const documents = (await Astro.glob('./documents/[!_]*.{md,mdx}')).sort()
+const documents = await Astro.glob('./documents/[!_]*.{md,mdx}')
 ---
 
 <BaseLayout
