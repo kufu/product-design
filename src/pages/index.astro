@@ -16,13 +16,11 @@ const documents = await Astro.glob('./documents/[!_]*.{md,mdx}')
   <section>
     <ul>
       {
-        documents.map((document) => {
-          return (
-            <li>
-              <a href={document.url}>{document.frontmatter.title}</a>
-            </li>
-          )
-        })
+        documents.map((document) => (
+          <li>
+            <a href={document.url}>{document.frontmatter.title}</a>
+          </li>
+        ))
       }
     </ul>
   </section>

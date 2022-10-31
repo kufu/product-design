@@ -2,7 +2,7 @@
 const { title } = Astro.params
 const documents = (await Astro.glob('./[!_]*.{md,mdx}')).sort()
 
-const result = documents.filter((doc) => doc.frontmatter.title === title)
+const result = documents.filter((document) => document.frontmatter.title === title)
 
 if (!result[0]) {
   return Astro.redirect('/404')
