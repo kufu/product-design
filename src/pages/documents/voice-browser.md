@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/ArticleLayout.astro
-title: UI-UX
+title: 音声ブラウザ
 description:
-tag: NG,word
+tag: word,ツール
 ---
 
 この記事は準備中です。

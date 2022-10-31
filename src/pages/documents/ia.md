@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/ArticleLayout.astro
-title: UI-UX
+title: インフォメーションアーキテクト
 description:
-tag: NG,word
+tag: word,IA
 ---
 
 この記事は準備中です。

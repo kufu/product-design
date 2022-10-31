@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/ArticleLayout.astro
-title: UI-UX
+title: MDN
 description:
-tag: NG,word
+tag: word,サービス
 ---
 
 この記事は準備中です。

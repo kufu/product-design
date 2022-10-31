@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/ArticleLayout.astro
-title: UI-UX
+title: 点字キーボード
 description:
-tag: NG,word
+tag: word,プロデザを取り巻く環境
 ---
 
 この記事は準備中です。
