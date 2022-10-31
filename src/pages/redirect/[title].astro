@@ -13,7 +13,8 @@ export async function getStaticPaths() {
 const { title } = Astro.params
 const { document } = Astro.props
 
-const redirectUrl = document.frontmatter.title === title ? `http://localhost:3000${document.url}` : `http://localhost:3000/404`
+const originUrl = Astro.url.origin
+const redirectUrl = document.frontmatter.title === title ? `${originUrl}${document.url}` : `${originUrl}/404`
 ---
 
 <head>
