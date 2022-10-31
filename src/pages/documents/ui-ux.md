@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/ArticleLayout.astro
-title: UX-UX
+title: UI-UX
 description:
 tag: NG,word
 ---

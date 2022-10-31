@@ -1,0 +1,12 @@
+---
+const { title } = Astro.params
+const documents = (await Astro.glob('./[!_]*.{md,mdx}')).sort()
+
+const result = documents.filter((doc) => doc.frontmatter.title === title)
+
+if (!result[0]) {
+  return Astro.redirect('/404')
+}
+
+return Astro.redirect(result[0].url)
+---

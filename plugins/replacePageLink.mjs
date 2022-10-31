@@ -5,8 +5,8 @@ export default function replacePageLink() {
     visit(tree, 'text', (node) => {
       let { value } = node
 
-      if (/\[\[.+?\]\]/.test(value)) {
-        const replaceValue = value.replace(/\[\[(.+?)\]\]/, '<a href="/documents/">$1</a>')
+      if (/::.+?::/.test(value)) {
+        const replaceValue = value.replace(/::(.+?)::/g, '<a href="/documents/$1">$1</a>')
 
         node.type = 'html'
         node.value = replaceValue
