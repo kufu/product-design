@@ -1,5 +1,8 @@
 import { defineConfig } from 'astro/config'
-import replacePageLink from './plugins/replacePageLink'
+import replacePageLink from './src/plugins/replacePageLink'
+
+// https://astro.build/config
+import compress from 'astro-compress'
 
 // https://astro.build/config
 export default defineConfig({
@@ -7,4 +10,5 @@ export default defineConfig({
     extendDefaultPlugins: true,
     remarkPlugins: [replacePageLink],
   },
+  integrations: [compress()],
 })
