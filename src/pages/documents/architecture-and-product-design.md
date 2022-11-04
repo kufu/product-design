@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/ArticleLayout.astro
-title: UI-UX
+title: 建築とプロダクトデザイン
 description:
-tag: NG,word
+tag: column,その他
 ---
 
 この記事は準備中です。
