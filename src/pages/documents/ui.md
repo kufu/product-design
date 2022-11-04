@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/ArticleLayout.astro
 title: UI
-description: 最初のブログ記事
-tag: word
+description: UIとはUser Interface（ユーザーインタフェース）の略で、物やサービスの利用者（ユーザー）とシステムをつなぐ界面（インターフェース）のこと。
+tag: word, UI, GUI, CUI
 ---
 
 UIとはUser Interface（ユーザーインタフェース）の略で、物やサービスの利用者（ユーザー）とシステムをつなぐ界面（インターフェース）のこと。システムが利用者がUIを通して行った操作に対する結果を返し、利用者はUIを通してその結果やシステムの状態を知ることが出来る。
