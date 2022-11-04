@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/ArticleLayout.astro
-title: インフォメーションアーキテクト
+title: 情報アーキテクチャ
 description:
 tag: word,IA
 ---
