@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/ArticleLayout.astro
-title: UI-UX
+title: ミッションやビジョンの大切さ
 description:
-tag: NG,word
+tag: column,プロデザを取り巻く環境
 ---
 
 この記事は準備中です。

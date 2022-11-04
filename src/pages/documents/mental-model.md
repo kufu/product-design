@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/ArticleLayout.astro
-title: UI-UX
+title: メンタルモデル
 description:
-tag: NG,word
+tag: word,デザイン
 ---
 
 この記事は準備中です。

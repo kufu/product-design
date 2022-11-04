@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/ArticleLayout.astro
-title: UI-UX
+title: アフォーダンス
 description:
-tag: NG,word
+tag: word,UI
 ---
 
 この記事は準備中です。

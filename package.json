@@ -8,9 +8,27 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint:code": "eslint --ext 'src/**/*.{ts,astro}'",
+    "lint:text": "textlint 'src/pages/**/*.md{,x}'",
+    "lint": "run-p lint:*",
+    "format": "eslint --fix --ext 'src/**/*.{ts,astro}'",
+    "format:text": "textlint --fix 'content/**/*.md{,x}'"
   },
   "dependencies": {
-    "astro": "^1.4.7"
+    "astro": "^1.6.1",
+    "astro-compress": "^1.1.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.41.0",
+    "@typescript-eslint/parser": "^5.41.0",
+    "eslint": "^8.26.0",
+    "eslint-plugin-astro": "^0.20.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.7.1",
+    "prettier-config-smarthr": "^1.0.0",
+    "prettier-plugin-astro": "^0.7.0",
+    "textlint": "^12.2.2",
+    "textlint-rule-preset-smarthr": "^1.15.2"
   }
 }

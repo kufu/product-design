@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/ArticleLayout.astro
-title: UI-UX
+title: ソフトウェアエンジニアリング
 description:
-tag: NG,word
+tag: word,エンジニアリング
 ---
 
 この記事は準備中です。

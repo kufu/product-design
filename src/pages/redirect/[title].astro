@@ -1,0 +1,22 @@
+---
+export async function getStaticPaths() {
+  const documents = await Astro.glob('../documents/[!_]*.{md,mdx}')
+
+  return documents.map((document) => {
+    return {
+      params: { title: document.frontmatter.title },
+      props: { document },
+    }
+  })
+}
+
+const { title } = Astro.params
+const { document } = Astro.props
+
+const originUrl = Astro.url.origin
+const redirectUrl = document.frontmatter.title === title ? `${originUrl}${document.url}` : `${originUrl}/404`
+---
+
+<head>
+  <meta http-equiv="refresh" content={`0; url=${redirectUrl}`} />
+</head>

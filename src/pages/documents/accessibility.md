@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/ArticleLayout.astro
-title: UI-UX
+title: アクセシビリティ
 description:
-tag: NG,word
+tag: word,アクセシビリティ
 ---
 
 この記事は準備中です。
