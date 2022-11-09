@@ -1,6 +1,6 @@
 {
-  "name": "@example/minimal",
-  "type": "module",
+  "name": "product-design",
+  "author": "SmartHR - Product Design Group",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -13,9 +13,10 @@
     "lint:text": "textlint 'src/pages/**/*.md{,x}'",
     "lint": "run-p lint:*",
     "format": "eslint --fix --ext 'src/**/*.{ts,astro}'",
-    "format:text": "textlint --fix 'content/**/*.md{,x}'"
+    "format:text": "textlint --fix 'src/pages/**/*.md{,x}'"
   },
   "dependencies": {
+    "@astrojs/vercel": "^2.3.3",
     "astro": "^1.6.1",
     "astro-compress": "^1.1.1"
   },

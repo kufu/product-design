@@ -1,4 +1,4 @@
-# Product Design Wiki
+# Product Design
 
 ## 実行コマンド
 
@@ -20,21 +20,21 @@ yarn を推奨していますが、npm コマンドの利用も可能です。
 ├── public/
 ├── src/
 │   └── layouts/
+│       └── wiki/
 │   └── pages/
-│       └── documents/
-│           └── *.md
-│       └── index.astro
+│       └── wiki/
+│           └── documents/
+│               └── *.md
 └── package.json
 ```
-
-## [WIP]用語の追加方法
+## Product Design Wiki
+### [WIP]用語の追加方法
 
 - ドキュメント追加用ブランチを作成。
-- `src/pages/documents`配下に、`_template.md`を参考に Markdown ファイルを作成。
+- `src/pages/wiki/documents`配下に、`_template.md`を参考に Markdown ファイルを作成。
 - ドキュメントを書く。
 - `main`ブランチへの Pull Request を作ってメンバーにレビューしてもらう。
 - レビュー完了後`main`ブランチへマージ。
-
 
 ## 独自Markdown記法
 
