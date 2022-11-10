@@ -5,7 +5,9 @@ const { content, rawContent } = Astro.props
 const MAX_DESC_LENGTH = 128
 
 const description = content.description ? content.description : rawContent().substr(0, MAX_DESC_LENGTH).replace(/\r?\n/g, '')
-const editUrl = `https://github.com/kufu/product-design/blob/main/${content.file.substring(content.file.indexOf('src/', 1))}`
+
+// Memo: 一旦編集はクローズドにしておく
+// const editUrl = `https://github.com/kufu/product-design/blob/main/${content.file.substring(content.file.indexOf('src/', 1))}`
 ---
 
 <BaseLayout title={content.title} description={description}>
@@ -15,8 +17,8 @@ const editUrl = `https://github.com/kufu/product-design/blob/main/${content.file
   <section>
     <h1>{content.title}</h1>
     <slot />
-    <p>
+    <!-- <p>
       <a href={editUrl}>ページを編集する</a>
-    </p>
+    </p> -->
   </section>
 </BaseLayout>
