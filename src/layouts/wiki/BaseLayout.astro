@@ -11,7 +11,7 @@ const isChildPage = Astro.url.pathname.split('/').length > 2 ? true : false
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <title>{`${title}${isChildPage && ' | Product Design Wiki'}`}</title>
+    <title>{`${title}${isChildPage ? ' | Product Design Wiki' : ''}`}</title>
     <link rel="canonical" href={canonicalUrl} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="creator" content="株式会社SmartHR" />
@@ -27,8 +27,8 @@ const isChildPage = Astro.url.pathname.split('/').length > 2 ? true : false
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@SmartHR_jp" />
     <meta name="twitter:creator" content="@SmartHR_jp" />
-    <meta name="twitter:title" content={`${title}${isChildPage && ' | Product Design Wiki'}`} />
-    <meta name="twitter:description" content="description" />
+    <meta name="twitter:title" content={`${title}${isChildPage ? ' | Product Design Wiki' : ''}`} />
+    <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={`${originUrl}/ogimage.png`} />
   </head>
   <body>
