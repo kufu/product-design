@@ -3,27 +3,29 @@ import '../../css/wiki/style.css'
 
 const { title, description } = Astro.props
 
-const canonical = Astro.url.href
+const originUrl = Astro.url.origin
+const canonicalUrl = Astro.url.href
+const isChildPage = Astro.url.pathname.split('/').length > 2 ? true : false
 ---
 
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <title>{title}</title>
-    <link rel="canonical" href={canonical} />
+    <title>{`${title}${isChildPage && ' | Product Design Wiki'}`}</title>
+    <link rel="canonical" href={canonicalUrl} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="creator" content="株式会社SmartHR" />
     <meta name="description" content={description} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@SmartHR_jp" />
-    <meta property="og:url" content={canonical} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content={title} />
+    <meta property="og:title" content={`${title}${isChildPage && ' | Product Design Wiki'}`} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content="ogp.png" />
+    <meta property="og:image" content={`${originUrl}/ogimage.png`} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="" />
+    <meta property="og:image:alt" content="Product Design Wiki" />
   </head>
   <body>
     <article>
