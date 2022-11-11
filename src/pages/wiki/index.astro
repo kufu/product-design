@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/wiki/BaseLayout.astro'
+import IndexList from '../../components/wiki/IndexList.astro'
 
 const documents = await Astro.glob('./documents/[!_]*.{md,mdx}')
 ---
@@ -14,22 +15,19 @@ const documents = await Astro.glob('./documents/[!_]*.{md,mdx}')
     プロダクトデザイングループ内で獲得した知見、スキル定義、学習コンテンツを掲載しています。プロダクトデザインに関わる人はどなたでも利用・参加できます。
   </p>
   <section>
-    <ul>
-      {
-        documents.map((document) => {
-          const string = 'この記事は準備中です。'
-
-          return (
-            <li>
-              {!document.rawContent().includes(string) ? (
-                <a href={document.url}>{document.frontmatter.title}</a>
-              ) : (
-                <>{document.frontmatter.title}</>
-              )}
-            </li>
-          )
-        })
-      }
-    </ul>
+    <h2>用語</h2>
+    <IndexList
+      documents={documents.filter((document) => {
+        return document.frontmatter.tag.split(',').includes('word')
+      })}
+    />
+  </section>
+  <section>
+    <h2>コラム</h2>
+    <IndexList
+      documents={documents.filter((document) => {
+        return document.frontmatter.tag.split(',').includes('column')
+      })}
+    />
   </section>
 </BaseLayout>
