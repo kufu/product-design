@@ -18,11 +18,14 @@ const documents = await Astro.glob('./documents/[!_]*.{md,mdx}')
       {
         documents.map((document) => {
           const string = 'この記事は準備中です。'
-          if (document.rawContent().includes(string)) return
 
           return (
             <li>
-              <a href={document.url}>{document.frontmatter.title}</a>
+              {!document.rawContent().includes(string) ? (
+                <a href={document.url}>{document.frontmatter.title}</a>
+              ) : (
+                <>{document.frontmatter.title}</>
+              )}
             </li>
           )
         })
