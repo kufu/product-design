@@ -1,6 +1,4 @@
 ---
-import type { MarkdownInstance } from 'astro'
-
 export interface Props {
   documents: Record<string, any>[]
 }
@@ -11,15 +9,11 @@ const { documents } = Astro.props
 <ul>
   {
     documents.map((document) => {
-      const string = 'この記事は準備中です。'
+      const existsContent = !document.rawContent().includes('この記事は準備中です。')
 
       return (
         <li>
-          {!document.rawContent().includes(string) ? (
-            <a href={document.url}>{document.frontmatter.title}</a>
-          ) : (
-            <>{document.frontmatter.title}</>
-          )}
+          <a href={existsContent && document.url}>{document.frontmatter.title}</a>
         </li>
       )
     })
