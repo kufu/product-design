@@ -11,14 +11,18 @@ const description = content.description ? content.description : rawContent().sub
 ---
 
 <BaseLayout title={content.title} description={description}>
-  <header>
+  <header slot="header">
     <a href="/wiki/">Product Design Wiki</a>
   </header>
-  <section>
-    <h1>{content.title}</h1>
-    <slot />
+  <main>
+    <article>
+      <header>
+        <h1>{content.title}</h1>
+      </header>
+      <slot />
+    </article>
     <!-- <p>
       <a href={editUrl}>ページを編集する</a>
     </p> -->
-  </section>
+  </main>
 </BaseLayout>
