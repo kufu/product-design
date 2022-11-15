@@ -32,9 +32,8 @@ const isChildPage = Astro.url.pathname.split('/').length > 2 ? true : false
     <meta name="twitter:image" content={`${originUrl}/ogimage.png`} />
   </head>
   <body>
-    <article>
-      <slot />
-    </article>
+    <slot name="header" />
+    <slot />
     <hr />
     <footer>
       <svg width="96" height="18" fill="none" xmlns="http://www.w3.org/2000/svg"

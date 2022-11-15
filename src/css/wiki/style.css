@@ -1,6 +1,7 @@
 body {
   overflow-wrap: break-word;
   font-family: system-ui, sans-serif;
+  max-width: 45em;
 }
 
 button,
@@ -11,19 +12,10 @@ textarea {
   font-size: 100%;
 }
 
-article {
-  max-width: 45em;
-}
-
-header {
-  font-weight: bold;
-}
-
 footer {
   margin-block-start: 1em;
 }
 
 table {
   border-collapse: collapse;
-  border-spacing: 0;
 }
