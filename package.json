@@ -16,7 +16,7 @@
     "format:text": "textlint --fix 'src/pages/**/*.md{,x}'"
   },
   "dependencies": {
-    "@astrojs/vercel": "^2.3.3",
+    "@astrojs/vercel": "^2.3.4",
     "astro": "^1.6.1",
     "astro-compress": "^1.1.1"
   },
