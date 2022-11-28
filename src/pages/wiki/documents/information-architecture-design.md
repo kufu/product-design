@@ -1,7 +1,7 @@
 ---
 layout: ../../../layouts/wiki/ArticleLayout.astro
 title: 情報設計
-description:情報設計は情報アーキテクチャ（の設計）を指す。
+description: 情報設計は情報アーキテクチャ（の設計）を指す。
 tag: word,IA
 ---
 
