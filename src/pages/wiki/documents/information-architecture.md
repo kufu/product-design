@@ -1,7 +1,7 @@
 ---
 layout: ../../../layouts/wiki/ArticleLayout.astro
 title: 情報アーキテクチャ
-description:情報アーキテクチャは、情報の分かりやすさ・探しやすさに関する技術やデザイン領域である。
+description: 情報アーキテクチャは、情報の分かりやすさ・探しやすさに関する技術やデザイン領域である。
 tag: word,IA
 ---
 
