@@ -17,19 +17,19 @@
   },
   "dependencies": {
     "@astrojs/vercel": "^2.3.4",
-    "astro": "^1.6.1",
-    "astro-compress": "^1.1.1"
+    "astro": "^1.6.11",
+    "astro-compress": "^1.1.13"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "@typescript-eslint/parser": "^5.44.0",
-    "eslint": "^8.26.0",
-    "eslint-plugin-astro": "^0.20.1",
+    "eslint": "^8.28.0",
+    "eslint-plugin-astro": "^0.21.0",
     "npm-run-all": "^4.1.5",
-    "prettier": "^2.7.1",
+    "prettier": "^2.8.0",
     "prettier-config-smarthr": "^1.0.0",
     "prettier-plugin-astro": "^0.7.0",
     "textlint": "^12.2.3",
-    "textlint-rule-preset-smarthr": "^1.15.2"
+    "textlint-rule-preset-smarthr": "^1.16.0"
   }
 }
