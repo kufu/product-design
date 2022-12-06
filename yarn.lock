@@ -478,11 +478,14 @@
     semver "^7.3.5"
     tar "^6.1.11"
 
-"@nikolarhristov/pipeline@0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@nikolarhristov/pipeline/-/pipeline-0.0.8.tgz#1fcc1f81c74d1ffdabdc649f00f7d663b33be9cd"
-  integrity sha512-+aGTAsMCExCEE17WpQTNJh3mkvlfyaTdHM6ugNQ1Pn6IBg/rQ6M/YtZp30644Kc6lD7BYAzvjq28T1hx6+rjPw==
+"@nikolarhristov/pipeline@0.0.12":
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/@nikolarhristov/pipeline/-/pipeline-0.0.12.tgz#b42ae7a978b7a42b211684580588d8794fcca2f3"
+  integrity sha512-LEVBD2AC3l/QRXxwqB24TbShxpt3rGQcUyxPE4pIqCuJWl/8AvIWy8QcK3F7OvF4XlIG/tQ2piN1PcKZ/bPvJQ==
   dependencies:
+    "@types/csso" "5.0.0"
+    "@types/html-minifier-terser" "7.0.0"
+    "@types/sharp" "0.31.0"
     critters "0.0.16"
     csso "5.0.5"
     deepmerge-ts "4.2.2"
@@ -490,7 +493,7 @@
     html-minifier-terser "7.1.0"
     sharp "0.31.2"
     svgo "3.0.2"
-    terser "5.16.0"
+    terser "5.16.1"
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -760,6 +763,18 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/css-tree@*":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@types/css-tree/-/css-tree-2.0.0.tgz#b5f940aae863899a5a628114d8bc526863937e0a"
+  integrity sha512-mY2sXRLBnUPMYw6mkOT+6dABeaNxAEKZz6scE9kQPNJx8fKe1fOsm8Honl7+xFYe6TKX8WNk2+7oMp2vBArJ9Q==
+
+"@types/csso@5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@types/csso/-/csso-5.0.0.tgz#e69f5c8d1fc99c4c7741ae65d3330deaff5d008e"
+  integrity sha512-EMrCTGpXRUsbFfZBzn2jcW6Sqg8kxWXkJcpvAGYSEzFqAJ2THDJSwiMeS2fPUw+0p6RQNT/n8F/skEc9hUBc0g==
+  dependencies:
+    "@types/css-tree" "*"
+
 "@types/debug@^4.0.0":
   version "4.1.7"
   resolved "https://registry.npmjs.org/@types/debug/-/debug-4.1.7.tgz"
@@ -798,6 +813,11 @@
   resolved "https://registry.npmjs.org/@types/html-escaper/-/html-escaper-3.0.0.tgz"
   integrity sha512-OcJcvP3Yk8mjYwf/IdXZtTE1tb/u0WF0qa29ER07ZHCYUBZXSN29Z1mBS+/96+kNMGTFUAbSz9X+pHmHpZrTCw==
 
+"@types/html-minifier-terser@7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@types/html-minifier-terser/-/html-minifier-terser-7.0.0.tgz#a316cad70201de31bcc1a97cf8b73b26ae46ad65"
+  integrity sha512-hw3bhStrg5e3FQT8qZKCJTrzt/UbEaunU1xRWJ+aNOTmeBMvE3S4Ml2HiiNnZgL8izu0LFVkHUoPFXL1s5QNpQ==
+
 "@types/json-schema@^7.0.9":
   version "7.0.11"
   resolved "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.11.tgz"
@@ -827,6 +847,11 @@
   dependencies:
     "@types/unist" "*"
 
+"@types/node@*":
+  version "18.11.10"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.11.10.tgz#4c64759f3c2343b7e6c4b9caf761c7a3a05cee34"
+  integrity sha512-juG3RWMBOqcOuXC643OAdSA525V44cVgGV6dUDuiFtss+8Fk5x1hI93Rsld43VeJVIeqlP9I7Fn9/qaVqoEAuQ==
+
 "@types/parse5@^6.0.0":
   version "6.0.3"
   resolved "https://registry.npmjs.org/@types/parse5/-/parse5-6.0.3.tgz"
@@ -841,6 +866,13 @@
   version "7.3.12"
   resolved "https://registry.npmjs.org/@types/semver/-/semver-7.3.12.tgz"
   integrity sha512-WwA1MW0++RfXmCr12xeYOOC5baSC9mSb0ZqCquFzKhcoF4TvHu5MKOuXsncgZcpVFhB1pXd5hZmM0ryAoCp12A==
+
+"@types/sharp@0.31.0":
+  version "0.31.0"
+  resolved "https://registry.yarnpkg.com/@types/sharp/-/sharp-0.31.0.tgz#c4af03a7e1d126f0d428a265e126fabd86ab6d0f"
+  integrity sha512-nwivOU101fYInCwdDcH/0/Ru6yIRXOpORx25ynEOc6/IakuCmjOAGpaO5VfUl4QkDtUC6hj+Z2eCQvgXOioknw==
+  dependencies:
+    "@types/node" "*"
 
 "@types/structured-source@^3.0.0":
   version "3.0.0"
@@ -1126,12 +1158,12 @@ astral-regex@^2.0.0:
   resolved "https://registry.npmjs.org/astral-regex/-/astral-regex-2.0.0.tgz"
   integrity sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ==
 
-astro-compress@^1.1.13:
-  version "1.1.13"
-  resolved "https://registry.yarnpkg.com/astro-compress/-/astro-compress-1.1.13.tgz#1eeab9b2d8a6ca672045e9f6343e481e1f6e9a10"
-  integrity sha512-nh6TwQeZHYrbtgNynJYQYO6FlkQZ9+dHp8+B4U2YaJ+zQJvHnhPSv1w33e5EkDz4mkOJ7XOzxBnN18tNOFEosg==
+astro-compress@^1.1.17:
+  version "1.1.17"
+  resolved "https://registry.yarnpkg.com/astro-compress/-/astro-compress-1.1.17.tgz#3f1018dc5de1cae128d22fca17920651612ea212"
+  integrity sha512-VYZZdTndFqICu5sNKsIk1kOq+fc878AIJQa+1dQPVilKCSOi2Jb62IHVpRESvKyvCzDq4ddDEHo3MpAkKvuUMw==
   dependencies:
-    "@nikolarhristov/pipeline" "0.0.8"
+    "@nikolarhristov/pipeline" "0.0.12"
 
 astro-eslint-parser@^0.9.0:
   version "0.9.0"
@@ -6047,7 +6079,17 @@ tar@^6.1.11:
     mkdirp "^1.0.3"
     yallist "^4.0.0"
 
-terser@5.16.0, terser@^5.15.1:
+terser@5.16.1:
+  version "5.16.1"
+  resolved "https://registry.yarnpkg.com/terser/-/terser-5.16.1.tgz#5af3bc3d0f24241c7fb2024199d5c461a1075880"
+  integrity sha512-xvQfyfA1ayT0qdK47zskQgRZeWLoOQ8JQ6mIgRGVNwZKdQMU+5FkCBjmv4QjcrTzyZquRw2FVtlJSRUmMKQslw==
+  dependencies:
+    "@jridgewell/source-map" "^0.3.2"
+    acorn "^8.5.0"
+    commander "^2.20.0"
+    source-map-support "~0.5.20"
+
+terser@^5.15.1:
   version "5.16.0"
   resolved "https://registry.yarnpkg.com/terser/-/terser-5.16.0.tgz#29362c6f5506e71545c73b069ccd199bb28f7f54"
   integrity sha512-KjTV81QKStSfwbNiwlBXfcgMcOloyuRdb62/iLFPGBcVNF4EXjhdYBhYHmbJpiBrVxZhDvltE11j+LBQUxEEJg==
