@@ -6,5 +6,5 @@ const filter = documents.filter((document) => {
   return document.frontmatter.title === title
 })
 
-return Astro.redirect(filter[0] ? `${filter[0].url}` : `/wiki/404`)
+return Astro.redirect(filter[0] ? `${filter[0].url}` : `/wiki/404/`)
 ---
