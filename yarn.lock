@@ -451,7 +451,7 @@
     "@jridgewell/gen-mapping" "^0.3.0"
     "@jridgewell/trace-mapping" "^0.3.9"
 
-"@jridgewell/sourcemap-codec@1.4.14", "@jridgewell/sourcemap-codec@^1.4.10", "@jridgewell/sourcemap-codec@^1.4.13":
+"@jridgewell/sourcemap-codec@1.4.14", "@jridgewell/sourcemap-codec@^1.4.10", "@jridgewell/sourcemap-codec@^1.4.13", "@jridgewell/sourcemap-codec@^1.4.14":
   version "1.4.14"
   resolved "https://registry.npmjs.org/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.4.14.tgz"
   integrity sha512-XPSJHWmi394fuUuzDnGz1wiKqWfo1yXecHQMRf2l6hztTO+nPru658AyDngaBe7isIxEkRsPR3FZh+s7iVa4Uw==
@@ -2296,17 +2296,17 @@ escape-string-regexp@^5.0.0:
   resolved "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-5.0.0.tgz"
   integrity sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==
 
-eslint-plugin-astro@^0.21.0:
-  version "0.21.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-astro/-/eslint-plugin-astro-0.21.0.tgz#94dbd54e47cdf1afe008b2bf52888411ebcdda10"
-  integrity sha512-7pEhTfYT+tlOMOSmQV77TNgCeuFZgqSAqJPTHh6LYlwLqYyBQLURc5RRtlQqCJkufSh4Fan4nsV3LXCT/vjpCA==
+eslint-plugin-astro@^0.21.1:
+  version "0.21.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-astro/-/eslint-plugin-astro-0.21.1.tgz#8978c68ac9acb17bcc4b48cb267b60cb03019855"
+  integrity sha512-gzT9R0b/Hl5sks8/WSMTlzu2VC7vdd99MnBYkq61Mk1zBWQ+C9MAuHeTcU72sFmR5XJX56NNURY6H+cN2StRcA==
   dependencies:
+    "@jridgewell/sourcemap-codec" "^1.4.14"
     "@typescript-eslint/types" "^5.25.0"
     astro-eslint-parser "^0.9.0"
     eslint-utils "^3.0.0"
     postcss "^8.4.14"
     postcss-selector-parser "^6.0.10"
-    sourcemap-codec "^1.4.8"
 
 eslint-scope@^5.1.1:
   version "5.1.1"
@@ -5746,11 +5746,6 @@ source-map@^0.7.3:
   version "0.7.4"
   resolved "https://registry.npmjs.org/source-map/-/source-map-0.7.4.tgz"
   integrity sha512-l3BikUxvPOcn5E74dZiq5BGsTb5yEwhaTSzccU6t4sDOH8NWJCstKO5QT2CvtFoK6F0saL7p9xHAqHOlCPJygA==
-
-sourcemap-codec@^1.4.8:
-  version "1.4.8"
-  resolved "https://registry.npmjs.org/sourcemap-codec/-/sourcemap-codec-1.4.8.tgz"
-  integrity sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==
 
 space-separated-tokens@^1.0.0:
   version "1.1.5"
