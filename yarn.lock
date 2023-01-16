@@ -1160,10 +1160,10 @@ astral-regex@^2.0.0:
   resolved "https://registry.npmjs.org/astral-regex/-/astral-regex-2.0.0.tgz"
   integrity sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ==
 
-astro-compress@^1.1.25:
-  version "1.1.25"
-  resolved "https://registry.yarnpkg.com/astro-compress/-/astro-compress-1.1.25.tgz#04cf75a636cfe1b67b325cfa1b8c0553c91635e7"
-  integrity sha512-67AZL1cQ/GF0bEEOpzSRzJiHVHUExSy0mCt3kbh4maWP5ikdBmv4I4BlFhlBWOmS/POukSwtxHbkP2l9bALdbQ==
+astro-compress@^1.1.27:
+  version "1.1.27"
+  resolved "https://registry.yarnpkg.com/astro-compress/-/astro-compress-1.1.27.tgz#d06cd5e89d424336112bf5cd090b4b73fdfa31ae"
+  integrity sha512-7H7mfp4/BECckQGtyNJVYBI9jwWYX3rBcbL1EbhlgyDRbs3/thtJKDwW8xEaUvxox4R2bnNyzIET4XF/zGbozg==
   dependencies:
     "@types/csso" "5.0.0"
     "@types/html-minifier-terser" "7.0.0"
