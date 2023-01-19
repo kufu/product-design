@@ -12,5 +12,4 @@ export default defineConfig({
   integrations: [compress()],
   output: 'server',
   adapter: vercel(),
-  // trailingSlash: 'always',
 })
