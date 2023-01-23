@@ -1,6 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["local>kufu/renovate-config", ":automergePatch"],
+  "extends": ["local>kufu/renovate-config", ":automergeMinor"],
   "minor": {
     "groupName": "all dependencies"
   }
