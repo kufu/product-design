@@ -27,4 +27,4 @@ Figmaでは、作成したデザインデータのうち、複数の画面など
 SmartHRではこの機能を利用して、プロダクト開発の生産性を向上するためのデザインシステムのひとつとして「SmartHR UI」というコンポーネント・ライブラリを公開している。
 
 ## 参考文献
-[Figma 公式サイト（日本語版）](https://www.figma.com/ja/design/)
+- [Figma 公式サイト（日本語版）](https://www.figma.com/ja/design/)
