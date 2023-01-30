@@ -29,7 +29,7 @@
     "prettier": "^2.8.3",
     "prettier-config-smarthr": "^1.0.0",
     "prettier-plugin-astro": "^0.8.0",
-    "textlint": "^12.6.1",
+    "textlint": "^13.0.5",
     "textlint-rule-preset-smarthr": "^1.18.2"
   }
 }
