@@ -1215,10 +1215,10 @@ astro-eslint-parser@^0.11.0:
     eslint-visitor-keys "^3.0.0"
     espree "^9.0.0"
 
-astro@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/astro/-/astro-2.0.2.tgz#a465d8ba066e16bd21e3b6d2a7a1b7aa209ba2fa"
-  integrity sha512-47N1jLWNxSri7kWfIfgcEnQJZWTvd0gXhNC3P2ZHiiurl4nOxFC5ULsW5MDDTjTzQ1S7y1RoaL9XxYm+Rury7w==
+astro@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/astro/-/astro-2.0.6.tgz#94d903066514b4e95a04a71121a0403716e9f025"
+  integrity sha512-aI8Ijy2EpMyP5SpjmDJpEUdNL6CUAxnja6IeaBC1BokD/mNAnijtmMnTyWVI3UeEZ727wYLISQMyqCfEUq8VNA==
   dependencies:
     "@astrojs/compiler" "^1.0.1"
     "@astrojs/language-server" "^0.28.3"
