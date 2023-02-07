@@ -19,7 +19,7 @@
   "dependencies": {
     "@astrojs/vercel": "^3.0.1",
     "astro": "^2.0.6",
-    "astro-compress": "^1.1.28"
+    "astro-compress": "^1.1.29"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.50.0",
