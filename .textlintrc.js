@@ -6,4 +6,7 @@ module.exports = {
     'smarthr/ja-space-between-half-and-full-width': false,
     'smarthr/ja-no-space-around-parentheses': false,
   },
+  filters: {
+    comments: true,
+  },
 }

@@ -17,7 +17,7 @@
     "format:text": "textlint --fix 'src/pages/**/*.md{,x}'"
   },
   "dependencies": {
-    "@astrojs/vercel": "^3.0.1",
+    "@astrojs/vercel": "^3.1.1",
     "astro": "^2.0.10",
     "astro-compress": "^1.1.32"
   },
@@ -31,6 +31,7 @@
     "prettier-config-smarthr": "^1.0.0",
     "prettier-plugin-astro": "^0.8.0",
     "textlint": "^12.6.1",
-    "textlint-rule-preset-smarthr": "^1.18.2"
+    "textlint-filter-rule-comments": "^1.2.2",
+    "textlint-rule-preset-smarthr": "^1.19.0"
   }
 }
