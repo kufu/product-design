@@ -83,12 +83,12 @@
     undici "^5.14.0"
     which-pm-runs "^1.1.0"
 
-"@astrojs/vercel@^3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@astrojs/vercel/-/vercel-3.1.1.tgz#185128598780489dc70fe2afdb785cba0cee8791"
-  integrity sha512-3u976waO1HjnmvImmdTiiHqlH+kCF/NAmppwtzWg86uTLj581gYy6OXIfzMxg5uvC1tODbciuauFJcmdEBThIw==
+"@astrojs/vercel@^3.1.3":
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/@astrojs/vercel/-/vercel-3.1.3.tgz#d6a2cbd5d31d83899a390c18cefaf9f4e0123f3e"
+  integrity sha512-x36rDQDk1ogW9Z2pEQdyY/5SvfDo91K63W5SzBaFhIEg5eCFhzWE1E191PxMNcOv8Z2jevKFfps5Gonj3crLvw==
   dependencies:
-    "@astrojs/webapi" "^2.0.0"
+    "@astrojs/webapi" "^2.0.1"
     "@vercel/analytics" "^0.1.8"
     "@vercel/nft" "^0.22.1"
     fast-glob "^3.2.11"
@@ -101,6 +101,13 @@
   integrity sha512-gziwy+XvY+/B9mq/eurgJMZ4iFnkcqg1wb0tA8BsVfiUPwl7yQKAFrBxrs2rWfKMXyWlVaTFc8rAYcB5VXQEuw==
   dependencies:
     undici "^5.14.0"
+
+"@astrojs/webapi@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@astrojs/webapi/-/webapi-2.0.1.tgz#b8459a2f3ad6d8d8fea0bb45bc41f7aa6436bcea"
+  integrity sha512-aOOHa86W5Ux77A3dS91YrVlSxtBSJsVK4UhvcXHY0gAl0ZrOStSKSBO45gZ6tFi2AiHu3bzpMtZjwrPHtl+cyg==
+  dependencies:
+    undici "5.18.0"
 
 "@azu/format-text@^1.0.1":
   version "1.0.1"
@@ -6116,6 +6123,13 @@ unbox-primitive@^1.0.2:
     has-bigints "^1.0.2"
     has-symbols "^1.0.3"
     which-boxed-primitive "^1.0.2"
+
+undici@5.18.0:
+  version "5.18.0"
+  resolved "https://registry.yarnpkg.com/undici/-/undici-5.18.0.tgz#e88a77a74d991a30701e9a6751e4193a26fabda9"
+  integrity sha512-1iVwbhonhFytNdg0P4PqyIAXbdlVZVebtPDvuM36m66mRw4OGrCm2MYynJv/UENFLdP13J1nPVQzVE2zTs1OeA==
+  dependencies:
+    busboy "^1.6.0"
 
 undici@^5.14.0:
   version "5.16.0"
