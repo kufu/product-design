@@ -2,7 +2,7 @@
 layout: ../../../layouts/wiki/ArticleLayout.astro
 title: デザインシステム
 description:
-tag: word,UI
+tag: word,ui
 ---
 
 この記事は準備中です。
