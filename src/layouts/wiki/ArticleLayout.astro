@@ -10,7 +10,7 @@ const description = content.description ? content.description : rawContent().sub
 // const editUrl = `https://github.com/kufu/product-design/blob/main/${content.file.substring(content.file.indexOf('src/', 1))}`
 ---
 
-<BaseLayout title={content.title} description={description}>
+<BaseLayout title={content.title} description={description} author={content.author}>
   <header slot="header">
     <a href="/wiki/">Product Design Wiki</a>
   </header>
@@ -20,6 +20,14 @@ const description = content.description ? content.description : rawContent().sub
         <h1>{content.title}</h1>
       </header>
       <slot />
+      {
+        content.author && (
+          <dl>
+            <dt>著者</dt>
+            <dd>{content.author}</dd>
+          </dl>
+        )
+      }
     </article>
     <!-- <p>
       <a href={editUrl}>ページを編集する</a>

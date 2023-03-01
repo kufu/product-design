@@ -2,7 +2,8 @@
 layout: ../../../layouts/wiki/ArticleLayout.astro
 title: デザインエンジニアリング
 description: デザインエンジニアリングとは、デザインとエンジニアリングが交差する領域における課題解決の指針です。
-tag: idea,occupation
+tag: word,occupation
+author: Shinichi Kogiso
 ---
 
 デザインエンジニアリングとは、デザインとエンジニアリングが交差する領域において、プロダクトの目的と機能を合わせつつ素早くアイデアを検証・解決するための指針です。
