@@ -1,7 +1,7 @@
 ---
 import '../../css/wiki/style.css'
 
-const { title, description } = Astro.props
+const { title, description, author } = Astro.props
 
 const MAX_DESCRIPTION_LENGTH = 120 // Memo: 大まかにPCの120文字まで抑えるというルールに従っている
 
@@ -22,6 +22,7 @@ const pageDescription = `${description.substring(0, MAX_DESCRIPTION_LENGTH)}${
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="creator" content="株式会社SmartHR" />
     <meta name="description" content={pageDescription} />
+    {author && <meta name="author" content={author} />}
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={pageTitle} />
