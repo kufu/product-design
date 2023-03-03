@@ -32,6 +32,6 @@
     "prettier-plugin-astro": "^0.8.0",
     "textlint": "^12.6.1",
     "textlint-filter-rule-comments": "^1.2.2",
-    "textlint-rule-preset-smarthr": "^1.19.0"
+    "textlint-rule-preset-smarthr": "^1.20.0"
   }
 }
