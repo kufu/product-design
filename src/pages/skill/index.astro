@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/wiki/BaseLayout.astro'
-import { Bar } from './Chart'
+import { SkillChart } from './SkillChart'
 ---
 
 <BaseLayout
@@ -14,8 +14,9 @@ import { Bar } from './Chart'
     <article>
       <header>
         <h1>プロダクトデザイナー スキルマップ</h1>
+        <p>プロダクトデザイナーが持つべきスキルマップを定義しています</p>
       </header>
-      <Bar client:load />
+      <SkillChart client:load />
     </article>
   </main>
 </BaseLayout>

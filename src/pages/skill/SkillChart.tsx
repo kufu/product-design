@@ -31,7 +31,7 @@ const initialLevels: MyObject = {
   }, {}),
 }
 
-export const Bar: React.FC = () => {
+export const SkillChart: React.FC = () => {
   const [levels, setLevels] = useState<MyObject>(initialLevels)
   const [graphData, setGraphData] = useState(initialGraphData)
 
@@ -57,9 +57,8 @@ export const Bar: React.FC = () => {
     <div>
       {skills.map((skill, parentIndex) => (
         <section key={parentIndex}>
-          <h2>
-            <a href={`/wiki/${skill.label}`}>{skill.label}</a>
-          </h2>
+          <h2>{skill.label}</h2>
+          {skill.description && <p>{skill.description}</p>}
           <ol>
             {skill.levels.map((level, levelNumber) => (
               <li key={levelNumber}>
