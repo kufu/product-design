@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../layouts/wiki/BaseLayout.astro'
+import { Bar } from './Chart'
+---
+
+<BaseLayout
+  title="404 Page Not Found | Product Design Wiki"
+  description="申し訳ありませんが、お探しのページは見つかりませんでした。お手数ですが、URLを確認してもう一度アクセスしてください。"
+>
+  <header slot="header">
+    <a href="/wiki/">Product Design Wiki</a>
+  </header>
+  <main>
+    <article>
+      <header>
+        <h1>プロダクトデザイナー スキルマップ</h1>
+      </header>
+      <Bar client:load />
+    </article>
+  </main>
+</BaseLayout>
