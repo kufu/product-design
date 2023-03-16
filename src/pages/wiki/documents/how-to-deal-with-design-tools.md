@@ -2,7 +2,7 @@
 layout: ../../../layouts/wiki/ArticleLayout.astro
 title: デザインツールと私
 description:
-tag: column,開発手法
+tag: column,デザインツール
 author: Nao Enomoto
 ---
 この記事はデザイナーのnaoがどのようにデザインツールという存在と向き合っているかを書き記した短編集になります。中には個人的な意見も含まれるため参考程度にご一読ください。
