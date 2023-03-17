@@ -1,6 +1,8 @@
 body {
+  padding-inline: 0.5rem;
   overflow-wrap: break-word;
   font-family: system-ui, sans-serif;
+  max-width: 45em;
 }
 
 button,
