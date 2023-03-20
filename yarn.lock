@@ -1337,10 +1337,10 @@ astro-compress@^1.1.35:
     svgo "3.0.2"
     terser "5.16.5"
 
-astro-eslint-parser@^0.12.0:
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/astro-eslint-parser/-/astro-eslint-parser-0.12.0.tgz#3eac9ecf41eca12948f29190e1650e3966b67522"
-  integrity sha512-1r8TXPHoUk6OSNzeGOGpklmPedleYVpZU50jIPfsQjzrGMs+XpCSCc8+AATnKraPYnTvkmNClhjafSY6w3H90g==
+astro-eslint-parser@^0.13.0:
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/astro-eslint-parser/-/astro-eslint-parser-0.13.0.tgz#18c722c3d96b262efec020b7a31b366d21dc8645"
+  integrity sha512-6dYYe7GOxZYSvLineTWQA1ienSVRrfuLJEtSeSqayp+yKXPe07gvfn0BNBMsJH822L+BRjbDIZBg1arFLadH4Q==
   dependencies:
     "@astrojs/compiler" "^1.0.0"
     "@typescript-eslint/scope-manager" "^5.48.2"
@@ -1349,6 +1349,7 @@ astro-eslint-parser@^0.12.0:
     debug "^4.3.4"
     eslint-visitor-keys "^3.0.0"
     espree "^9.0.0"
+    semver "^7.3.8"
 
 astro@^2.1.2:
   version "2.1.2"
@@ -2230,15 +2231,15 @@ escape-string-regexp@^5.0.0:
   resolved "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-5.0.0.tgz"
   integrity sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==
 
-eslint-plugin-astro@^0.24.0:
-  version "0.24.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-astro/-/eslint-plugin-astro-0.24.0.tgz#e494f9249967e3e902c3bc9fb359ea76f5064eb8"
-  integrity sha512-oRGBMZPAFHhAHD8cyZez4OA5LRkgxLA+RtCIInC4nzw8thO/uojMdKXDri+sy2IFsGcu2PpOw70Uik0U5/izug==
+eslint-plugin-astro@^0.26.0:
+  version "0.26.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-astro/-/eslint-plugin-astro-0.26.0.tgz#7c9a7c95cb10597aef4a388c0528836082e3ee44"
+  integrity sha512-izKb6/3Y/unEAy6xVNqahMe5cQ1rDYz4+ItliwTXyuM46IMSieaSH3OSOOD/NfcWaEi1wt/1pwqYGeqDQBwMeg==
   dependencies:
+    "@eslint-community/eslint-utils" "^4.2.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
     "@typescript-eslint/types" "^5.25.0"
-    astro-eslint-parser "^0.12.0"
-    eslint-utils "^3.0.0"
+    astro-eslint-parser "^0.13.0"
     postcss "^8.4.14"
     postcss-selector-parser "^6.0.10"
 
