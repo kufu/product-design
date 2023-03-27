@@ -1337,10 +1337,10 @@ astro-compress@^1.1.35:
     svgo "3.0.2"
     terser "5.16.5"
 
-astro-eslint-parser@^0.13.0:
-  version "0.13.0"
-  resolved "https://registry.yarnpkg.com/astro-eslint-parser/-/astro-eslint-parser-0.13.0.tgz#18c722c3d96b262efec020b7a31b366d21dc8645"
-  integrity sha512-6dYYe7GOxZYSvLineTWQA1ienSVRrfuLJEtSeSqayp+yKXPe07gvfn0BNBMsJH822L+BRjbDIZBg1arFLadH4Q==
+astro-eslint-parser@^0.13.1:
+  version "0.13.2"
+  resolved "https://registry.yarnpkg.com/astro-eslint-parser/-/astro-eslint-parser-0.13.2.tgz#41833a0128bec4b22f250504df2ac252eb4ca02a"
+  integrity sha512-hLCfc4IfeR550tCxEQDOnoDbf+B7CtU3he0foNQ+XxfYyx+8qKwcEIvigrU1PzfwAfAvT83RFA1Q6TWHDj82GA==
   dependencies:
     "@astrojs/compiler" "^1.0.0"
     "@typescript-eslint/scope-manager" "^5.48.2"
@@ -2231,15 +2231,15 @@ escape-string-regexp@^5.0.0:
   resolved "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-5.0.0.tgz"
   integrity sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==
 
-eslint-plugin-astro@^0.26.0:
-  version "0.26.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-astro/-/eslint-plugin-astro-0.26.0.tgz#7c9a7c95cb10597aef4a388c0528836082e3ee44"
-  integrity sha512-izKb6/3Y/unEAy6xVNqahMe5cQ1rDYz4+ItliwTXyuM46IMSieaSH3OSOOD/NfcWaEi1wt/1pwqYGeqDQBwMeg==
+eslint-plugin-astro@^0.26.1:
+  version "0.26.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-astro/-/eslint-plugin-astro-0.26.1.tgz#149ac1452e54313789aa3b3dbbd0d06ab3c991c4"
+  integrity sha512-FEZOrOQ5ahenbwjKz5LYJpeOZUggDM54idrq5bTJdL4GsXy1xx2eyKy5UjGhh8NwddowCCPqfDHFfDz9oNj/ew==
   dependencies:
     "@eslint-community/eslint-utils" "^4.2.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
     "@typescript-eslint/types" "^5.25.0"
-    astro-eslint-parser "^0.13.0"
+    astro-eslint-parser "^0.13.1"
     postcss "^8.4.14"
     postcss-selector-parser "^6.0.10"
 
@@ -4883,10 +4883,10 @@ prettier@^2.8.3:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.3.tgz#ab697b1d3dd46fb4626fbe2f543afe0cc98d8632"
   integrity sha512-tJ/oJ4amDihPoufT5sM0Z1SKEuKay8LfVAMlbbhnnkvt6BUserZylqo2PN+p9KeljLr0OHa2rXHU1T8reeoTrw==
 
-prettier@^2.8.5:
-  version "2.8.5"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.5.tgz#3dd8ae1ebddc4f6aa419c9b64d8c8319a7e0d982"
-  integrity sha512-3gzuxrHbKUePRBB4ZeU08VNkUcqEHaUaouNt0m7LGP4Hti/NuB07C7PPTM/LkWqXoJYJn2McEo5+kxPNrtQkLQ==
+prettier@^2.8.7:
+  version "2.8.7"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.8.7.tgz#bb79fc8729308549d28fe3a98fce73d2c0656450"
+  integrity sha512-yPngTo3aXUUmyuTjeTUT75txrf+aMh9FiD7q9ZE/i6r0bPb22g4FsE6Y338PQX1bmfy08i9QQCB7/rcUAVntfw==
 
 prh@^5.4.4:
   version "5.4.4"
