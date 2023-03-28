@@ -1,27 +1,14 @@
-import { ChangeEvent, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Radar } from 'react-chartjs-2'
 import { Chart as ChartJS, RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend } from 'chart.js'
 import skills from '../../skill.json'
 
 ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend)
 
-const initialGraphData = {
-  labels: ['行政手続きの知識', '給与計算および税制の知識', '既存プロダクトの理解', 'ファシリテーション能力'],
-  datasets: [
-    {
-      label: '# of Votes',
-      data: [1, 1, 1, 1],
-      backgroundColor: 'rgba(255, 99, 132, 0.2)',
-      borderColor: 'rgba(255, 99, 132, 1)',
-      borderWidth: 2,
-    },
-  ],
-}
-
 const initialDatasets = {
   datasets: [
     {
-      label: '# of Votes',
+      label: 'スキル',
       data: [1, 1, 1, 1],
       backgroundColor: 'rgba(255, 99, 132, 0.2)',
       borderColor: 'rgba(255, 99, 132, 1)',
@@ -30,7 +17,7 @@ const initialDatasets = {
   ],
 }
 
-const hoge = [
+const initialGraphsData = [
   {
     name: 'コア',
     labels: ['行政手続きの知識', '給与計算および税制の知識', '既存プロダクトの理解', 'ファシリテーション能力'],
@@ -74,17 +61,13 @@ const hoge = [
   },
 ]
 
-const graph1 = ['行政手続きの知識', '給与計算および税制の知識', '既存プロダクトの理解', 'ファシリテーション能力']
-
 const initialLevels = skills.map((item) => {
   return { label: item.label, level: 1 }
 })
 
-console.log(initialLevels)
-
 export const SkillChart: React.FC = () => {
   const [levels, setLevels] = useState<{ label: string; level: number }[]>(initialLevels)
-  const [graphData, setGraphData] = useState(initialGraphData)
+  const [graphsData, setGraphsData] = useState(initialGraphsData)
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
@@ -105,24 +88,30 @@ export const SkillChart: React.FC = () => {
   }
 
   useEffect(() => {
-    setGraphData((prevData) => ({
-      ...prevData,
-      labels: graph1,
-      datasets: [
-        {
-          ...prevData.datasets[0],
-          data: levels.filter((item) => graph1.some((str) => item.label === str)).map((item) => item.level),
-        },
-      ],
-    }))
-    console.log(graph1)
+    setGraphsData(
+      graphsData.map((graph, index) => {
+        return {
+          ...graph,
+          datasets: [
+            {
+              ...graph.datasets[0],
+              data: graph.labels.map((label) => {
+                const level = levels.find((item) => item.label === label)
+                return level ? level.level : 1
+              }),
+            },
+          ],
+        }
+      }),
+    )
   }, [levels])
 
   return (
-    <div>
+    <>
+      <h2>スキル一覧</h2>
       {skills.map((skill, parentIndex) => (
-        <section key={parentIndex}>
-          <h2>{skill.label}</h2>
+        <div key={parentIndex}>
+          <h3>{skill.label}</h3>
           {skill.description && <p>{skill.description}</p>}
           <ul>
             {skill.levels.map((level, levelNumber) => (
@@ -144,23 +133,30 @@ export const SkillChart: React.FC = () => {
               </li>
             ))}
           </ul>
-        </section>
+        </div>
       ))}
-      <h2>行政手続きの知識</h2>
-      <Radar
-        data={graphData}
-        options={{
-          scales: {
-            r: {
-              max: 5, //グラフの最大値
-              min: 0, //グラフの最小値
-              ticks: {
-                stepSize: 1, //目盛間隔
+      <hr />
+      <h2>スキルグラフ</h2>
+      <p>スキル一覧で選択したスキルデータを分野別にグラフ出力しています。</p>
+      {graphsData.map((graphData, index) => (
+        <div key={index} style={{ width: '500px', height: '500px' }}>
+          <h3>{graphData.name}</h3>
+          <Radar
+            data={graphData}
+            options={{
+              scales: {
+                r: {
+                  max: 5,
+                  min: 0,
+                  ticks: {
+                    stepSize: 1,
+                  },
+                },
               },
-            },
-          },
-        }}
-      />
-    </div>
+            }}
+          />
+        </div>
+      ))}
+    </>
   )
 }
