@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../layouts/wiki/BaseLayout.astro'
+import BaseLayout from '../../layouts/BaseLayout.astro'
 import IndexList from '../../components/wiki/IndexList.astro'
 
 const documents = await Astro.glob('./documents/[!_]*.{md,mdx}')
@@ -8,11 +8,10 @@ const documents = await Astro.glob('./documents/[!_]*.{md,mdx}')
 <BaseLayout
   title="Product Design Wiki"
   description="プロダクトデザイングループ内で獲得した知見、スキル定義、学習コンテンツを掲載しています。プロダクトデザインに関わる人はどなたでも利用・参加できます。"
+  type="wiki"
 >
   <header slot="header">
     <a href="/">Product Designへ戻る</a>
-  </header>
-  <header>
     <h1>Product Design Wiki</h1>
     <p>
       Product Design Wikiへようこそ。SmartHR

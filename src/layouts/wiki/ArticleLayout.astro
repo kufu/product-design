@@ -1,5 +1,5 @@
 ---
-import BaseLayout from './BaseLayout.astro'
+import BaseLayout from '../BaseLayout.astro'
 
 const { content, rawContent } = Astro.props
 const MAX_DESC_LENGTH = 128
@@ -10,7 +10,7 @@ const description = content.description ? content.description : rawContent().sub
 // const editUrl = `https://github.com/kufu/product-design/blob/main/${content.file.substring(content.file.indexOf('src/', 1))}`
 ---
 
-<BaseLayout title={content.title} description={description} author={content.author}>
+<BaseLayout title={content.title} description={description} author={content.author} type="wiki">
   <header slot="header">
     <a href="/wiki/">Product Design Wiki</a>
   </header>
