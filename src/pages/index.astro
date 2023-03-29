@@ -1,3 +1,15 @@
 ---
-return Astro.redirect('/wiki/')
+import BaseLayout from '../layouts/wiki/BaseLayout.astro'
 ---
+
+<BaseLayout title="Product Design" description="--">
+  <header>
+    <h1>Product Design</h1>
+  </header>
+  <section>
+    <ul>
+      <li><a href="/wiki">Product Design Wiki</a></li>
+      <li><a href="/skill">Product Design Skill</a></li>
+    </ul>
+  </section>
+</BaseLayout>

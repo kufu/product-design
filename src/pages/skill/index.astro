@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/wiki/BaseLayout.astro'
-import { SkillChart } from './SkillChart'
+import { SkillChart } from '../../components/skill/SkillChart'
 ---
 
 <BaseLayout
@@ -8,15 +8,13 @@ import { SkillChart } from './SkillChart'
   description="申し訳ありませんが、お探しのページは見つかりませんでした。お手数ですが、URLを確認してもう一度アクセスしてください。"
 >
   <header slot="header">
-    <a href="/wiki/">Product Design Wiki</a>
+    <a href="/">Product Designへ戻る</a>
   </header>
-  <main>
-    <article>
-      <header>
-        <h1>プロダクトデザイナー スキルマップ</h1>
-        <p>SmartHRではプロダクトデザイナーが必要とされる技能をスキルマップ化しています。各スキルを5段階で定義しています。</p>
-      </header>
-      <SkillChart client:load />
-    </article>
-  </main>
+  <header>
+    <h1>Product Design Skill</h1>
+    <p>SmartHRではプロダクトデザイナーが必要とされる技能をスキルマップ化しています。各スキルを5段階で定義しています。</p>
+  </header>
+  <section>
+    <SkillChart client:load />
+  </section>
 </BaseLayout>

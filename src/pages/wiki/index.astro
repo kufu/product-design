@@ -10,6 +10,9 @@ const documents = await Astro.glob('./documents/[!_]*.{md,mdx}')
   description="プロダクトデザイングループ内で獲得した知見、スキル定義、学習コンテンツを掲載しています。プロダクトデザインに関わる人はどなたでも利用・参加できます。"
 >
   <header slot="header">
+    <a href="/">Product Designへ戻る</a>
+  </header>
+  <header>
     <h1>Product Design Wiki</h1>
     <p>
       Product Design Wikiへようこそ。SmartHR
@@ -18,18 +21,10 @@ const documents = await Astro.glob('./documents/[!_]*.{md,mdx}')
   </header>
   <section>
     <h2>用語</h2>
-    <IndexList
-      documents={documents.filter((document) => 
-        document.frontmatter.tag.split(',').includes('word')
-      )}
-    />
+    <IndexList documents={documents.filter((document) => document.frontmatter.tag.split(',').includes('word'))} />
   </section>
   <section>
     <h2>コラム</h2>
-    <IndexList
-      documents={documents.filter((document) => 
-        document.frontmatter.tag.split(',').includes('column')
-      )}
-    />
+    <IndexList documents={documents.filter((document) => document.frontmatter.tag.split(',').includes('column'))} />
   </section>
 </BaseLayout>
