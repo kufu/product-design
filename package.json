@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@astrojs/vercel": "^3.2.4",
-    "astro": "^2.1.9",
+    "astro": "^2.3.0",
     "astro-compress": "^1.1.42"
   },
   "devDependencies": {
@@ -32,6 +32,6 @@
     "prettier-plugin-astro": "^0.8.0",
     "textlint": "^12.6.1",
     "textlint-filter-rule-comments": "^1.2.2",
-    "textlint-rule-preset-smarthr": "^1.21.1"
+    "textlint-rule-preset-smarthr": "^1.23.1"
   }
 }
