@@ -1448,10 +1448,10 @@ astral-regex@^2.0.0:
   resolved "https://registry.npmjs.org/astral-regex/-/astral-regex-2.0.0.tgz"
   integrity sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ==
 
-astro-compress@^1.1.41:
-  version "1.1.41"
-  resolved "https://registry.yarnpkg.com/astro-compress/-/astro-compress-1.1.41.tgz#248aaa4680fc0f3e8037723795ca887e882be656"
-  integrity sha512-avAlzu3uNWLIKCXS5OlnJEmO779Ua8f3kdNaTqv5+BOIGel1glXqQNM8diIV48nVfuEp7aVSLaij1udjsvLAjw==
+astro-compress@^1.1.42:
+  version "1.1.42"
+  resolved "https://registry.yarnpkg.com/astro-compress/-/astro-compress-1.1.42.tgz#f9573f483758cee74ecc37e6f5bbf599f31df255"
+  integrity sha512-heMdV3amY/k1NA4FHuNu1Nwady834tY79x8O39fBSlSvBpgESUCX2qergd7sMsaWushwqr47hWaSrfItELGaUg==
   dependencies:
     "@lightrix/config" "0.0.11"
     "@lightrix/scripts" "1.0.3"
