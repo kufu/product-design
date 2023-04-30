@@ -83,10 +83,10 @@
     undici "^5.20.0"
     which-pm-runs "^1.1.0"
 
-"@astrojs/vercel@^3.2.4":
-  version "3.2.4"
-  resolved "https://registry.yarnpkg.com/@astrojs/vercel/-/vercel-3.2.4.tgz#f4a1ad9c13617f5a1d47bc047f27ae989e379ff9"
-  integrity sha512-KJCJL3pj+Ia5yRyrfZUGvLwuTanb5DNf2nQYY6bCcSdZMOqX8VTYAL6hN+sEBp4vvM/GjlTC3Jfm4LEeiwmscw==
+"@astrojs/vercel@^3.2.5":
+  version "3.2.5"
+  resolved "https://registry.yarnpkg.com/@astrojs/vercel/-/vercel-3.2.5.tgz#22d0861bb35092dc481cfedceb2e31b9e14b5191"
+  integrity sha512-Az2Qcd0GSJHqZV7eWLe8q3h3tzbMApvSQbO6kCoJ9G4cUlQN1UeMZYQcJEG0WBB9YmHQNvttt8qyowVPACnwuQ==
   dependencies:
     "@astrojs/webapi" "^2.1.0"
     "@vercel/analytics" "^0.1.8"
