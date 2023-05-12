@@ -22,6 +22,7 @@ tag: word,開発手法
 > - 8：美的かつ最小限のデザイン
 > - 9：ユーザーがエラーを認識、診断、回復できるように支援する
 > - 10：ヘルプとドキュメントの提供
+> via: [10 Usability Heuristics for User Interface Design | Nielsen Norman Group](https://www.nngroup.com/articles/ten-usability-heuristics/)
 
 プロダクト開発においては、ユーザビリティの原則に基づいて、製品の使いやすさや効率性を評価する。
 具体的なヒューリスティック原則としては、一貫性と標準化、フィードバックの可視性、認知負荷の軽減などが挙げられる。
