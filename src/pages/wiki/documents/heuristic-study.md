@@ -6,7 +6,7 @@ tag: word,開発手法
 ---
 
 ヒューリスティック調査とは、プロダクトのユーザビリティ上の問題を特定するために、専門家がインターフェースやシステムを評価する調査方法の1つである。
-実施は、一般的なガイドラインやベストプラクティスに基づいて専門家によって実施されることが多く、効果的なフィードバックを提供することが期待される。
+調査は、一般的なガイドラインやベストプラクティスに基づいて実施されることが多い。
 代表的なヒューリスティックによる評価指針として、ヤコブ・ニールセン博士による「[10 Usability Heuristics for User Interface Design](https://www.nngroup.com/articles/ten-usability-heuristics/)」が挙げられる。
 
 和訳した「10 Usability Heuristics for User Interface Design」は次の通り。
