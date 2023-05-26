@@ -26,5 +26,3 @@ tag: word,開発手法
 プロダクト開発においては、ユーザビリティの原則に基づいて、製品の使いやすさや効率性を評価し、ヒューリスティック原則としては、一貫性と標準化、フィードバックの可視性、認知負荷の軽減などが挙げられる。  
 調査はプロダクト開発サイクルの初期段階や、大きな変更があった際に実施されることが多く、発見された問題を改善することで製品の品質やユーザーの満足度の向上が期待される。  
 
-## 参考文献
-- [10 Usability Heuristics for User Interface Design | Nielsen Norman Group](https://www.nngroup.com/articles/ten-usability-heuristics/)
