@@ -1,10 +1,7 @@
 module.exports = {
   rules: {
-    'preset-smarthr': true,
-    'smarthr/ja-no-mixed-period': false,
-    'smarthr/sentence-length': false,
-    'smarthr/ja-space-between-half-and-full-width': false,
-    'smarthr/ja-no-space-around-parentheses': false,
+    // 現段階でtextlintは有効化してもあまり効果がないので無効化しておく
+    'preset-smarthr': false,
   },
   filters: {
     comments: true,
