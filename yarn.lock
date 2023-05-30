@@ -1756,10 +1756,10 @@ escape-string-regexp@^5.0.0:
   resolved "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-5.0.0.tgz"
   integrity sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==
 
-eslint-plugin-astro@^0.27.0:
-  version "0.27.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-astro/-/eslint-plugin-astro-0.27.0.tgz#fb9fd4769caa4d74052f8ec9183a9942da7e7799"
-  integrity sha512-r3PizFY+xwQMRWcEvRKCWQkfHNl2Q+7ANN1ZIpnvJZP97KUX8F2WUnTvPuk2jJGqnRa+zQ5NgoJ9aenFKcGP9A==
+eslint-plugin-astro@^0.27.1:
+  version "0.27.1"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-astro/-/eslint-plugin-astro-0.27.1.tgz#a3800c4a8c3bc332c1c2c5e4238b85725936ebb5"
+  integrity sha512-xt02HVlj5lBoAPzYOKDfVa3swjFr2Vh0Rj6TsInWmfcmQcjEkDMnu9olUAF8Q+LqHr0wQr5z6GmcxJskSqOmjQ==
   dependencies:
     "@eslint-community/eslint-utils" "^4.2.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
@@ -3767,10 +3767,10 @@ prettier-plugin-astro@^0.7.0:
     sass-formatter "^0.7.5"
     synckit "^0.8.4"
 
-prettier-plugin-astro@^0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/prettier-plugin-astro/-/prettier-plugin-astro-0.9.0.tgz#7ea3c75a7e885c0f9cdce63c1076932d0f3c7c8a"
-  integrity sha512-LZ47EzCz0RvJBzC2GhtP5MI4ygEci/N5z73MMWAZFIOfSrn53sWCz0pN2HDwDGI7tvGg5Q5dnaX4EBrzkdb2Hg==
+prettier-plugin-astro@^0.9.1:
+  version "0.9.1"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-astro/-/prettier-plugin-astro-0.9.1.tgz#237d2f536d66501c3a351614c43c2372baca7411"
+  integrity sha512-pYZXSbdq0eElvzoIMArzv1SBn1NUXzopjlcnt6Ql8VW32PjC12NovwBjXJ6rh8qQLi7vF8jNqAbraKW03UPfag==
   dependencies:
     "@astrojs/compiler" "^1.0.1"
     prettier "^2.8.3"
