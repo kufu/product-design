@@ -79,25 +79,18 @@
     undici "^5.22.0"
     which-pm-runs "^1.1.0"
 
-"@astrojs/vercel@^3.4.0":
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/@astrojs/vercel/-/vercel-3.4.0.tgz#d2cb45dc25f93b79678f543185b1b5d69219a170"
-  integrity sha512-pTD7PUos5uoUFZZXooiNN2vcALLQtGF1urtaFCEMWJVbmpYUC8YlA8RsISbF2ICEpTgDWMHttRJE10aCBHrmKA==
+"@astrojs/vercel@^3.4.1":
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/@astrojs/vercel/-/vercel-3.4.1.tgz#95a74c2bfc77feecd9e1e88c1cc3d2a07693188f"
+  integrity sha512-EFYxpEGFA4QXVxF0Wk10fHoBypuoP1SkSU+K6osLl3Xjxb1jx3rdsmM56w+FNX3z4QD9dpEqjfVD7lu+VM9udA==
   dependencies:
-    "@astrojs/webapi" "^2.1.1"
+    "@astrojs/webapi" "^2.2.0"
     "@vercel/analytics" "^0.1.8"
     "@vercel/nft" "^0.22.1"
     esbuild "^0.17.12"
     fast-glob "^3.2.11"
     set-cookie-parser "^2.5.1"
     web-vitals "^3.1.1"
-
-"@astrojs/webapi@^2.1.1":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@astrojs/webapi/-/webapi-2.1.1.tgz#965bcc35a72ca40e60e1ed4c2e4350f215bee179"
-  integrity sha512-mHZ7VgPNMeV3TYIw3SGHTKaJosBxA8bTzZ3QhNw509qvCJca4Lkjes8JywimuwTn+TMjEiv7ksNfwRluad3jqA==
-  dependencies:
-    undici "^5.22.0"
 
 "@astrojs/webapi@^2.2.0":
   version "2.2.0"
