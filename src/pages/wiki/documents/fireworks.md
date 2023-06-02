@@ -29,7 +29,7 @@ Fireworksで忘れられないのは、バグの多さである。特にFirework
 
 ## Fireworksの終わり
 
-Adobeは2013年にFireworksの開発とアップデートを停止した。その理由については、Adobeが他のソフトウェア（例えばPhotoShop、Illustrator）にリソースを集中することを決定したからと考えられる。
+Adobeは2013年にFireworksの開発とアップデートを停止した。その理由については、Adobeが他のソフトウェア（例えばPhotoshop、Illustrator）にリソースを集中することを決定したからと考えられる。
 
 当時この発表に多くのFireworksユーザーが失望した。AdobeはPhotoshopやIllustratorをFireworksの代替としてしばらく推奨していたが、そもそものコンセプトとしてスクリーンデバイス向けに設計されていないため、これらツールは完全な代替にはなり得なかった。
 
