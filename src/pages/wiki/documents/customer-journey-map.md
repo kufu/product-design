@@ -21,4 +21,4 @@ tag: word,開発手法
 
 
 ## 参考文献
-- [	安藤　昌也(2016)「UXデザインの教科書」丸善出版](https://www.maruzen-publishing.co.jp/item/?book_no=294953)
+- [安藤 昌也(2016)「UXデザインの教科書」丸善出版](https://www.maruzen-publishing.co.jp/item/?book_no=294953)
