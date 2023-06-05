@@ -1,6 +1,6 @@
 ---
 layout: ../../../layouts/wiki/ArticleLayout.astro
-title: ポートフォリオに思想を込めろ
+title: 思想を見せよう
 description:
 tag: column
 author: drivesketch
@@ -28,7 +28,7 @@ author: drivesketch
 この世界がどうなってほしい？ どこをどう変えたい？  
 どうなったら最高だと思う？  
 
-それを、ぜひポートフォリオで伝えてほしいのです。
+それを、ぜひ伝えてほしいのです。
 
 
 
