@@ -1,6 +1,6 @@
 ---
 layout: ../../../layouts/wiki/ArticleLayout.astro
-title: デザインという「作品」について
+title: デザインを「作品」と呼ぶことについて
 description:
 tag: column,デザイン
 ---
