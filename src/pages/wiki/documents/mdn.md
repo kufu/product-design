@@ -5,4 +5,6 @@ description:
 tag: word,サービス
 ---
 
-この記事は準備中です。
+MDNとはMDN Web Docsのことを指す。これはウェブ標準及びMozillaプロジェクトの開発文書のためのMozillaの公式ウェブサイトである。
+
+MDNの詳しい情報は公式サイトの[MDN Web Docs](https://developer.mozilla.org/ja/)を参照すること。
