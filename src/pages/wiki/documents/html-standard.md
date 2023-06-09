@@ -2,7 +2,7 @@
 layout: ../../../layouts/wiki/ArticleLayout.astro
 title: HTML Standard
 description:
-tag: column,仕様
+tag: word,仕様
 ---
 
 [HTML Standard](https://html.spec.whatwg.org/multipage/) とは [WHATWG](https://whatwg.org/) が公開している HTML 仕様のこと。HTML “Living Standard” と呼ばれることもある。これは WHATWG が作業草案や勧告といった状態を持たず「内容は確定せず更新され続ける」ことを表している。つまり仕様の名前としては「Standard」と呼ぶのが正しい。
