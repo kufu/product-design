@@ -6,7 +6,7 @@ export default function replacePageLink() {
       let { value } = node
 
       if (/:\[(.+?)\]:/.test(value)) {
-        const replaceValue = value.replace(/:\[(.+?)\]:/g, '<a href="/wiki/redirect/$1/">$1</a>')
+        const replaceValue = value.replace(/:\[(.+?)\]:/g, '<a href="/redirect/$1/">$1</a>')
 
         node.type = 'html'
         node.value = replaceValue

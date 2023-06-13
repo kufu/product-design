@@ -1,0 +1,34 @@
+---
+const documents = await Astro.glob('../words/documents/[!_]*.{md,mdx}')
+const { title } = Astro.params
+
+const words = await Astro.glob('../words/documents/[!_]*.{md,mdx}')
+const columns = await Astro.glob('../columns/documents/[!_]*.{md,mdx}')
+
+// Merge all documents into one array
+const allDocuments = [...words, ...columns]
+
+console.log(allDocuments)
+
+const filter = allDocuments.filter((document) => {
+  return document.frontmatter.title === title
+})
+
+return Astro.redirect(filter[0] ? `${filter[0].url}` : `/404/`)
+
+// const directories = ['../words/documents', '../columns/documents']
+// const globPattern = '[!_]*.{md,mdx}'
+
+// const { title } = Astro.params
+
+// const promises = directories.map((dir) => Astro.glob(`${dir}/${globPattern}`))
+// console.log(promises)
+
+// const allDocuments = await Promise.all(promises)
+
+// const filter = allDocuments.filter((document) => {
+//   return document.frontmatter.title === title
+// })
+
+// return Astro.redirect(filter[0] ? `${filter[0].url}` : `/404/`)
+---

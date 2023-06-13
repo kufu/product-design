@@ -36,7 +36,7 @@ const pageDescription = `${description.substring(0, MAX_DESCRIPTION_LENGTH)}${
     <meta name="twitter:creator" content="@SmartHR_jp" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={pageDescription} />
-    <meta name="twitter:image" content={`${originUrl}/${ogimage}`} />
+    <meta name="twitter:image" content={ogimage ? `${originUrl}/${ogimage}` : `${originUrl}/ogimage_wiki.png`} />
   </head>
   <body>
     <slot name="header" />
