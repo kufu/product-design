@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/wiki/ArticleLayout.astro
+layout: ../../../layouts/words/ArticleLayout.astro
 title: ダイアログ
 description:
 tag: word,ui

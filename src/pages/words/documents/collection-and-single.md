@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/wiki/ArticleLayout.astro
+layout: ../../../layouts/words/ArticleLayout.astro
 title: コレクションとシングル
 description: コレクションは、ひとつのビューの中に同種のオブジェクトを複数並べて表示する。シングルは、ひとつのビューでオブジェクトひとつ分を表示する。
 tag: word

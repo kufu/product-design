@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/wiki/ArticleLayout.astro
+layout: ../../../layouts/columns/ArticleLayout.astro
 title: ユーアイ ユーエックス（UI/UX、UIUX）
 description:
 tag: NG,column

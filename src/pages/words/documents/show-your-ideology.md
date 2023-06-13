@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/wiki/ArticleLayout.astro
+layout: ../../../layouts/words/ArticleLayout.astro
 title: 思想を見せよう
 description:
 tag: column

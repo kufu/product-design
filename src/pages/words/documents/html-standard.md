@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/columns/ArticleLayout.astro
+layout: ../../../layouts/words/ArticleLayout.astro
 title: HTML Standard
 description:
 tag: word,仕様
