@@ -12,7 +12,7 @@
       "source": "/wiki/",
       "destination": "/",
       "permanent": true
-    }
+    },
     {
       "source": "/wiki/documents/(.*)",
       "destination": "/word/documents/$1",
