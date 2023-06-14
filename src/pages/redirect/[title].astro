@@ -15,20 +15,4 @@ const filter = allDocuments.filter((document) => {
 })
 
 return Astro.redirect(filter[0] ? `${filter[0].url}` : `/404/`)
-
-// const directories = ['../words/documents', '../columns/documents']
-// const globPattern = '[!_]*.{md,mdx}'
-
-// const { title } = Astro.params
-
-// const promises = directories.map((dir) => Astro.glob(`${dir}/${globPattern}`))
-// console.log(promises)
-
-// const allDocuments = await Promise.all(promises)
-
-// const filter = allDocuments.filter((document) => {
-//   return document.frontmatter.title === title
-// })
-
-// return Astro.redirect(filter[0] ? `${filter[0].url}` : `/404/`)
 ---
