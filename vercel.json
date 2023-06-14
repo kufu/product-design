@@ -9,6 +9,11 @@
     { "source": "/wiki/documents/ui-ux/", "destination": "/columns/documents/ui-ux/" },
     { "source": "/wiki/documents/show-your-ideology/", "destination": "/columns/documents/show-your-ideology/" },
     {
+      "source": "/wiki/",
+      "destination": "/",
+      "permanent": true
+    }
+    {
       "source": "/wiki/documents/(.*)",
       "destination": "/word/documents/$1",
       "permanent": true
