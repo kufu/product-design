@@ -1,0 +1,49 @@
+---
+import '../css/style.css'
+
+const { title, description, author, ogimage } = Astro.props
+
+const MAX_DESCRIPTION_LENGTH = 120 // Memo: 大まかにPCの120文字まで抑えるというルールに従っている
+
+const originUrl = Astro.url.origin
+const canonicalUrl = Astro.url.href
+const isChildPage = Astro.url.pathname.split('/').length > 3 ? true : false
+const pageTitle = `${title}${isChildPage ? ' | Product Design Wiki' : ''}`
+const pageDescription = `${description.substring(0, MAX_DESCRIPTION_LENGTH)}${
+  description.length > MAX_DESCRIPTION_LENGTH ? '...' : ''
+}`
+---
+
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>{pageTitle}</title>
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="creator" content="株式会社SmartHR" />
+    <meta name="description" content={pageDescription} />
+    {author && <meta name="author" content={author} />}
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:image" content={`${originUrl}/${ogimage}`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={pageTitle} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@SmartHR_jp" />
+    <meta name="twitter:creator" content="@SmartHR_jp" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={ogimage ? `${originUrl}/${ogimage}` : `${originUrl}/ogimage_wiki.png`} />
+  </head>
+  <body>
+    <slot name="header" />
+    <slot />
+    <hr />
+    <footer>
+      <p>&copy; SmartHR, Inc.</p>
+    </footer>
+  </body>
+</html>
