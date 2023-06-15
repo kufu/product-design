@@ -33,10 +33,7 @@ const columns = await Astro.glob('./columns/[!_]*.{md,mdx}')
     <IndexList documents={columns} />
   </section>
   <section>
-    <header>
-      <h2>スキル定義</h2>
-      <p>SmartHRではプロダクトデザイナーが必要とされる技能をスキルとして定義しています。</p>
-    </header>
-    <p><a href="/skills/">スキル定義を見る</a></p>
+    <h2><a href="/skills/">スキル定義</a></h2>
+    <p>SmartHRではプロダクトデザイナーが必要とされる技能をスキルとして定義しています。</p>
   </section>
 </BaseLayout>
