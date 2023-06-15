@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import IndexList from '../components/IndexList.astro'
+
+const words = await Astro.glob('./words/[!_]*.{md,mdx}')
+const columns = await Astro.glob('./columns/[!_]*.{md,mdx}')
 ---
 
 <BaseLayout
@@ -14,11 +18,28 @@ import BaseLayout from '../layouts/BaseLayout.astro'
       プロダクトデザイングループ内で獲得した知見、スキル定義、学習コンテンツを掲載しています。プロダクトデザインに関わる人はどなたでも利用・参加できます。
     </p>
   </header>
-  <nav>
-    <ul>
-      <li><a href="/words/">用語</a></li>
-      <li><a href="/columns/">コラム</a></li>
-      <li><a href="/skills/">スキル</a></li>
-    </ul>
-  </nav>
+  <section>
+    <header>
+      <h2>用語</h2>
+      <p>プロダクトデザイングループ内で整理した用語を掲載した用語集です。</p>
+    </header>
+    <IndexList documents={words} />
+  </section>
+  <section>
+    <header>
+      <h2>コラム</h2>
+      <p>SmartHRに所属するプロダクトデザイナーが書いたコラムを掲載しています。</p>
+    </header>
+    <IndexList documents={columns} />
+  </section>
+  <section>
+    <header>
+      <h2>スキルマップ</h2>
+      <p>
+        SmartHRではプロダクトデザイナーが必要とされる技能をスキルマップとして定義しています。
+        例として「SmartHRでのドメイン知識の例」を含めていますが、デジタルプロダクトデザインにおいて汎用的な技能を網羅しています。
+      </p>
+    </header>
+    <p><a href="/skills/">スキルマップを見る</a></p>
+  </section>
 </BaseLayout>

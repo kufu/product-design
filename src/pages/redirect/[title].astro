@@ -1,6 +1,6 @@
 ---
-const words = await Astro.glob('../words/documents/[!_]*.{md,mdx}')
-const columns = await Astro.glob('../columns/documents/[!_]*.{md,mdx}')
+const words = await Astro.glob('../words/[!_]*.{md,mdx}')
+const columns = await Astro.glob('../columns/[!_]*.{md,mdx}')
 const { title } = Astro.params
 
 // Merge all documents into one array
