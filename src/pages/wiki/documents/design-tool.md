@@ -20,16 +20,7 @@ tag: word,デザインツール
 - Framer
 - STUDIO
 
-### グラフィック,Webサイトデザイン
-- Adobe Photoshop
-- Adobe Illustrator
-- Adobe InDesign
-- Canva
-- Affinity Designer
-- Affinity Photo
-- :[Fireworks]:
-
-### 工業製品
-- Autodesk AutoCAD
+## 参考
+- [グラフィックソフトウェア- Wikipedia](https://ja.wikipedia.org/wiki/%E3%82%B0%E3%83%A9%E3%83%95%E3%82%A3%E3%83%83%E3%82%AF%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2)
 
 
