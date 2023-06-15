@@ -15,7 +15,7 @@
     },
     {
       "source": "/wiki/documents/(.*)",
-      "destination": "/word/documents/$1",
+      "destination": "/word/$1",
       "permanent": true
     }
   ]
