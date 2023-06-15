@@ -21,13 +21,13 @@ tag: word,デザインツール
 - STUDIO
 
 ### グラフィック,Webサイトデザイン
-- :[Fireworks]:
 - Adobe Photoshop
 - Adobe Illustrator
 - Adobe InDesign
 - Canva
 - Affinity Designer
 - Affinity Photo
+- :[Fireworks]:
 
 ### 工業製品
 - Autodesk AutoCAD
