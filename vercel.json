@@ -4,10 +4,10 @@
   "redirects": [
     {
       "source": "/wiki/documents/how-to-deal-with-design-tools/",
-      "destination": "/columns/documents/how-to-deal-with-design-tools/"
+      "destination": "/columns/how-to-deal-with-design-tools/"
     },
-    { "source": "/wiki/documents/ui-ux/", "destination": "/columns/documents/ui-ux/" },
-    { "source": "/wiki/documents/show-your-ideology/", "destination": "/columns/documents/show-your-ideology/" },
+    { "source": "/wiki/documents/ui-ux/", "destination": "/columns/ui-ux/" },
+    { "source": "/wiki/documents/show-your-ideology/", "destination": "/columns/show-your-ideology/" },
     {
       "source": "/wiki/",
       "destination": "/",
