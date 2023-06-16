@@ -16,7 +16,7 @@ tag: word,IA
 - 制作したプロダクトの品質が安定する
 - プロダクトの利用者の学習コストが低減される
 
-SmartHRでは、プロダクト内のパターンを整理し、SmartHR Design System内に「デザインパターン」として公開・共有している。
+SmartHRでは、プロダクト内のパターンを整理し、SmartHR Design System内に「(デザインパターン)[https://smarthr.design/products/design-patterns/]」として公開・共有している。
 
 ## 参考
 
