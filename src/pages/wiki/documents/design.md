@@ -34,4 +34,4 @@ tag: column,デザイン
 ## 参考
 
 - [デザイン - Wikipedia](https://ja.wikipedia.org/wiki/%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3)
-- [デザイン思考が生んだ、問題解決というデザインの「誤解」｜designing](view-source:https://designing.jp/what-if-design-isnt-problem-solving)
+- [デザイン思考が生んだ、問題解決というデザインの「誤解」｜designing](https://designing.jp/what-if-design-isnt-problem-solving)
