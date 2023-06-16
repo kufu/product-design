@@ -17,3 +17,9 @@ tag: word,IA
 - プロダクトの利用者の学習コストが低減される
 
 SmartHRでは、プロダクト内のパターンを整理し、SmartHR Design System内に「デザインパターン」として公開・共有している。
+
+## 参考
+
+- [パターン、Wiki、XP―― 時を超えた創造の原則（江渡浩一郎、技術評論社）](https://gihyo.jp/book/2009/978-4-7741-3897-8)
+- [パタン・ランゲージ―環境設計の手引（クリストファー・アレグザンダー、鹿島出版社）](https://kajima-publishing.co.jp/books/community-development/qajola0arj/)
+- [About Face 3 インタラクションデザインの極意（アラン・クーパー、アスキー・メディアワークス）](https://www.amazon.co.jp/dp/4048672452)
