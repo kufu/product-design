@@ -3,5 +3,5 @@
 # すべてにプロデザを指定
 * @kufu/product-designer
 
-# コラムを含む Markdown に全員を指定
-*.md @oremega @ysasaki10 @ouji-miyahara @uknmr @versionfive @kgsi @daxelbook @wentzzz @ayumizu @drivesketch @tosiiu
+# コラム配下に全員を指定
+**/columns/ @oremega @ysasaki10 @ouji-miyahara @uknmr @versionfive @kgsi @daxelbook @wentzzz @ayumizu @drivesketch @tosiiu
