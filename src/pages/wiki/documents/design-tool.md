@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/wiki/ArticleLayout.astro
+layout: ../../layouts/ArticleLayout.astro
 title: デザインツール
 description:
 tag: word,デザインツール
