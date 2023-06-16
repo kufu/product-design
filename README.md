@@ -1,13 +1,10 @@
-# Product Design
+# Product Design Wiki
 
 ## 概要
 
-| サイト名                 | URL                            |
-| :---------------------- | :----------------------------- |
-| Product Design          | 準備中                          |
-| Product Design Wiki     | https://product-design.jp/wiki |
-| Product Design Road map | 準備中                          |
-| Product Design Skills   | 準備中                          |
+Product Design Wiki へようこそ。SmartHR プロダクトデザイングループ内で獲得した知見、スキル定義、学習コンテンツを掲載しています。プロダクトデザインに関わる人はどなたでも利用・参加できます。
+
+https://product-design.jp/
 
 ## 実行コマンド
 
@@ -29,18 +26,19 @@ yarn を推奨していますが、npm コマンドの利用も可能です。
 ├── public/
 ├── src/
 │   └── layouts/
-│       └── wiki/
 │   └── pages/
-│       └── wiki/
-│           └── documents/
+│           └── columns/
 │               └── *.md
+│           └── words/
+│               └── *.md
+│           └── skills/
 └── package.json
 ```
 ## Product Design Wiki
 ### [WIP]用語の追加方法
 
 - ドキュメント追加用ブランチを作成。
-- `src/pages/wiki/documents`配下に、`_template.md`を参考に Markdown ファイルを作成。
+- `src/pages/{words, columns}`配下に、`_template.md`を参考に Markdown ファイルを作成。
 - ドキュメントを書く。
 - `main`ブランチへの Pull Request を作ってメンバーにレビューしてもらう。
 - レビュー完了後`main`ブランチへマージ。
