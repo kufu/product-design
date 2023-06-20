@@ -1,0 +1,16 @@
+---
+const words = await Astro.glob('../words/[!_]*.{md,mdx}')
+const columns = await Astro.glob('../columns/[!_]*.{md,mdx}')
+const { title } = Astro.params
+
+// Merge all documents into one array
+const allDocuments = [...words, ...columns]
+
+console.log(allDocuments)
+
+const filter = allDocuments.filter((document) => {
+  return document.frontmatter.title === title
+})
+
+return Astro.redirect(filter[0] ? `${filter[0].url}` : `/404/`)
+---

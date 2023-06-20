@@ -1,3 +1,39 @@
 ---
-return Astro.redirect('/wiki/')
+import BaseLayout from '../layouts/BaseLayout.astro'
+import IndexList from '../components/IndexList.astro'
+
+const words = await Astro.glob('./words/[!_]*.{md,mdx}')
+const columns = await Astro.glob('./columns/[!_]*.{md,mdx}')
 ---
+
+<BaseLayout
+  title="Product Design Wiki"
+  description="Product Design Wikiでは、プロダクトデザイングループ内で獲得した知見、スキル定義、学習コンテンツを掲載しています。プロダクトデザインに関わる人はどなたでも利用・参加できます。"
+  ogimage="ogimage_wiki.png"
+>
+  <header>
+    <h1>Product Design Wiki</h1>
+    <p>
+      Product Design Wikiへようこそ。SmartHR
+      プロダクトデザイングループ内で獲得した知見、スキル定義、学習コンテンツを掲載しています。プロダクトデザインに関わる人はどなたでも利用・参加できます。
+    </p>
+  </header>
+  <section>
+    <header>
+      <h2>用語</h2>
+      <p>プロダクトデザイングループ内で整理した用語を掲載しています。</p>
+    </header>
+    <IndexList documents={words} />
+  </section>
+  <section>
+    <header>
+      <h2>コラム</h2>
+      <p>SmartHRに所属するプロダクトデザイナーが書いたコラムを掲載しています。</p>
+    </header>
+    <IndexList documents={columns} />
+  </section>
+  <section>
+    <h2><a href="/skills/">スキル定義</a></h2>
+    <p>SmartHRではプロダクトデザイナーが必要とされる技能をスキルとして定義しています。</p>
+  </section>
+</BaseLayout>
