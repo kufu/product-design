@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/wiki/ArticleLayout.astro
+layout: ../../layouts/ArticleLayout.astro
 title: 点字ディスプレイ
 description:
 tag: word,プロデザを取り巻く環境
