@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/wiki/ArticleLayout.astro
+layout: ../../../layouts/ArticleLayout.astro
 title: シグニファイア
 description:
 tag: word,UI
