@@ -20,4 +20,4 @@ SmarHRはアプリケーションソフトウェアの中でも、Webの技術�
 
 ## 参考文献
 
-[1][2][3] 大辞林 第四版
+[1][2][3] [大辞林 第四版](https://dictionary.sanseido-publ.co.jp/topic/djr4/)
