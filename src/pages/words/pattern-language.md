@@ -16,7 +16,7 @@ tag: word,IA
 - 製作したプロダクトの品質が安定する
 - プロダクトの利用者の学習コストが低減される
 
-SmartHRにおけるパターン・ランゲージの実践例としては、プロダクト内のパターンを収集・整理し、SmartHR Design System内に公開・共有されている「[デザインパターン](https://smarthr.design/products/design-patterns/)」がある。
+SmartHRにおけるパターン・ランゲージの実践例としては、プロダクト内のパターンを収集・整理し、SmartHR Design System内に公開・共有している「[デザインパターン](https://smarthr.design/products/design-patterns/)」がある。
 
 ## 参考
 
