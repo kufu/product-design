@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@astrojs/vercel": "^3.5.0",
-    "astro": "^2.7.0",
+    "astro": "^2.7.1",
     "astro-compress": "^1.1.47"
   },
   "devDependencies": {
