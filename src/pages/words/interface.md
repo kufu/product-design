@@ -2,7 +2,7 @@
 layout: ../../layouts/ArticleLayout.astro
 title: 界面
 description:
-tag: column,UI
+tag: word,UI
 ---
 
 界面とは2つの物質の境の面のことである。境界面ともいう。コンピューターサイエンスではインターフェースと呼ばれる。
