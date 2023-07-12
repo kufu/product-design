@@ -5,15 +5,19 @@ description: デザインシステムは、デザインとエンジニアリン�
 tag: word,ui
 ---
 
-「デザインシステム」という言葉に明確な定義は無いが、SmartHRにおいては「**デザインとエンジニアリングが不可分であるプロダクト開発において、生産性を向上するための手段**」と捉えている。
+「デザインシステム」という言葉に明確な定義は無い。
+
+例えば、SmartHRが提供する[SmartHR Design System](https://smarthr.design/)では、デザインシステム全体を
+
+> サービスに関わるすべての人がSmartHRらしい表現をするための基準や素材をまとめたもの
+
+とした上で、特にプロダクト開発の文脈においては「デザインとエンジニアリングが不可分であるプロダクト開発において、生産性を向上するための手段」と捉えている。
 
 代表的なデザインシステムとしては、以下のようなものが挙げられる。
 - [Lightning Design System（Salesforce）](https://www.lightningdesignsystem.com/)
 - [Material Design（Google）](https://m3.material.io/)
 - [Carbon Design System（IBM）](https://carbondesignsystem.com/)
 - [Spectrum（Adobe）](https://spectrum.adobe.com/)
-
-SmartHRでも、[SmartHR Design System](https://smarthr.design/)という独自のデザインシステムを用いてプロダクト開発を行っている。
 
 ## デザインシステムの目的
 
