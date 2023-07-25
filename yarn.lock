@@ -1218,7 +1218,7 @@ astro-eslint-parser@^0.14.0:
     espree "^9.0.0"
     semver "^7.3.8"
 
-astro@^2.8.5:
+astro@^2.9.2:
   version "2.9.2"
   resolved "https://registry.yarnpkg.com/astro/-/astro-2.9.2.tgz#12cbd248820b737b0c51fa61230d9a4c31b58864"
   integrity sha512-ejdGM9SbK58AvJS8lbkre/d5CoW8JftqaRxc9rGqzpiZQ8iU8gfdFmi3Hzkcvd2HrGvYYsJku88pM6tkBPniJQ==
