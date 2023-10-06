@@ -15,7 +15,7 @@
     "format": "eslint --fix --ext 'src/**/*.{ts,astro}'"
   },
   "dependencies": {
-    "@astrojs/vercel": "^5.0.1",
+    "@astrojs/vercel": "^5.0.2",
     "astro": "^3.2.2",
     "astro-compress": "^2.0.15"
   },
