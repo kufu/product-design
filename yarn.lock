@@ -4669,10 +4669,10 @@ prettier-config-smarthr@^1.0.0:
   resolved "https://registry.yarnpkg.com/prettier-config-smarthr/-/prettier-config-smarthr-1.0.0.tgz#1d9ca4c9601db481b3bae701d13107ac868c28d0"
   integrity sha512-4sCh8QhwdDn46O+zEi83PXIVcpLIYHp5FPKCQ19VUJuhvkotDJd0mHlevlNIZ2OW8v+mK7HMZpAeaPiGhvjG4Q==
 
-prettier-plugin-astro@^0.12.0:
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/prettier-plugin-astro/-/prettier-plugin-astro-0.12.0.tgz#4faf0d0fcc7ca005668917109f399a548473a6fd"
-  integrity sha512-8E+9YQR6/5CPZJs8XsfBw579zrwZkc0Wb7x0fRVm/51JC8Iys4lBw4ecV8fHwpbQnzve86TUa4fJ08BJzqfWnA==
+prettier-plugin-astro@^0.12.3:
+  version "0.12.3"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-astro/-/prettier-plugin-astro-0.12.3.tgz#5e581f71b834cb73a840ffd44381812f236a7a60"
+  integrity sha512-GthUSu3zCvmtVyqlArosez0xE08vSJ0R1sWurxIWpABaCkNGYFANoUdFkqmIo54EV2uPLGcVJzOucWvCjPBWvg==
   dependencies:
     "@astrojs/compiler" "^1.5.5"
     prettier "^3.0.0"
