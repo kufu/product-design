@@ -21,8 +21,14 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
 
+      # Setup pnpm
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+
       # Run scripts
       - name: Install dependencies
-        run: yarn
+        run: pnpm install
       - name: linting
-        run: yarn lint
+        run: pnpm lint
