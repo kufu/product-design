@@ -1,0 +1,6 @@
+# Cloudflare Pages redirects
+/wiki/documents/how-to-deal-with-design-tools/ /columns/how-to-deal-with-design-tools/ 301
+/wiki/documents/ui-ux/ /columns/ui-ux/ 301
+/wiki/documents/show-your-ideology/ /columns/show-your-ideology/ 301
+/wiki/ / 301
+/wiki/documents/* /words/:splat 301 
