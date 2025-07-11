@@ -10,4 +10,5 @@ export default defineConfig({
   },
   integrations: [compress()],
   trailingSlash: 'always',
+  site: 'https://product-design.jp',
 })
