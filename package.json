@@ -24,7 +24,7 @@
     "@typescript-eslint/eslint-plugin": "^6.18.1",
     "@typescript-eslint/parser": "^6.18.1",
     "eslint": "^8.56.0",
-    "eslint-plugin-astro": "^0.31.3",
+    "eslint-plugin-astro": "^0.34.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.2.4",
     "prettier-config-smarthr": "^1.0.0",
