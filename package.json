@@ -15,7 +15,7 @@
     "format": "eslint --fix --ext 'src/**/*.{ts,astro}'"
   },
   "dependencies": {
-    "astro": "^3.6.4",
+    "astro": "^5.0.0",
     "astro-compress": "^2.2.3",
     "glob": "^11.0.3",
     "unist-util-visit": "^5.0.0"
