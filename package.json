@@ -17,7 +17,7 @@
   "dependencies": {
     "astro": "^3.6.4",
     "astro-compress": "^2.2.3",
-    "glob": "^11.0.3",
+    "glob": "^13.0.0",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
