@@ -13,7 +13,7 @@ pnpm を推奨していますが、npm コマンドの利用も可能です。
 | Command             | Action                                           |
 | :------------------ | :----------------------------------------------- |
 | `pnpm install`      | Installs dependencies                            |
-| `pnpm dev`          | Starts local dev server at `localhost:3000`      |
+| `pnpm dev`          | Starts local dev server at `localhost:4321`      |
 | `pnpm build`        | Build your production site to `./dist/`          |
 | `pnpm preview`      | Preview your build locally, before deploying     |
 | `pnpm astro ...`    | Run CLI commands like `astro add`, `astro check` |
