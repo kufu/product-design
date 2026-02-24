@@ -1,6 +1,5 @@
 import { visit } from 'unist-util-visit'
-import { glob } from 'glob'
-import { readFileSync } from 'fs'
+import { globSync, readFileSync } from 'node:fs'
 
 // ページのタイトルとURLのマッピングを作成
 let pageMap = null
@@ -11,8 +10,8 @@ async function createPageMap() {
   pageMap = new Map()
 
   // words と columns のファイルを取得
-  const wordFiles = await glob('src/pages/words/[!_]*.{md,mdx}')
-  const columnFiles = await glob('src/pages/columns/[!_]*.{md,mdx}')
+  const wordFiles = await globSync('src/pages/words/[!_]*.{md,mdx}')
+  const columnFiles = await globSync('src/pages/columns/[!_]*.{md,mdx}')
 
   const allFiles = [...wordFiles, ...columnFiles]
 
