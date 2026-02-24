@@ -15,18 +15,17 @@
     "format": "eslint --fix --ext 'src/**/*.{ts,astro}'"
   },
   "dependencies": {
-    "@eslint/eslintrc": "^3.3.3",
+    "@eslint/eslintrc": "^3.3.4",
     "@eslint/js": "^10.0.1",
-    "astro": "^5.17.2",
+    "astro": "^5.17.3",
     "astro-compress": "^2.3.9",
-    "glob": "^13.0.5",
     "globals": "^17.3.0",
     "unist-util-visit": "^5.1.0"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^8.56.0",
-    "@typescript-eslint/parser": "^8.56.0",
-    "eslint": "^10.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.56.1",
+    "@typescript-eslint/parser": "^8.56.1",
+    "eslint": "^10.0.2",
     "eslint-plugin-astro": "^1.6.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.8.1",
