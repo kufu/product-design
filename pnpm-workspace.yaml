@@ -1,5 +1,5 @@
 minimumReleaseAge: 10080
 
-onlyBuiltDependencies:
+allowBuild:
   - esbuild: true
   - sharp: true
