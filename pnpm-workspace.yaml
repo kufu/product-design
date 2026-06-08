@@ -1,5 +1,5 @@
 minimumReleaseAge: 10080
 
-allowBuild:
-  - esbuild: true
-  - sharp: true
+allowBuilds:
+  esbuild: true
+  sharp: true
