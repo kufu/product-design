@@ -1,9 +1,6 @@
 import { Marked } from 'marked'
 
-const HTML_ESCAPES = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }
-
-/** HTMLエスケープ。テキストと属性値の両方に使う */
-export const escapeHtml = (value) => String(value).replace(/[&<>"]/g, (character) => HTML_ESCAPES[character])
+import { escapeHtml } from './html.mjs'
 
 /**
  * frontmatterと本文を分離する。
@@ -62,7 +59,8 @@ const pageLinkExtension = (pageMap) => ({
 
     return { type: 'pageLink', raw: match[0], title: match[1] }
   },
-  renderer: (token) => `<a href="${pageMap.get(token.title) ?? '/404/'}">${escapeHtml(token.title)}</a>`,
+  renderer: (token) =>
+    `<a href="${escapeHtml(pageMap.get(token.title) ?? '/404/')}">${escapeHtml(token.title)}</a>`,
 })
 
 /** 引用符と三点リーダーを約物に置き換える（旧: Astroのsmartypants相当） */

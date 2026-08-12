@@ -65,7 +65,7 @@ const pages = [
       pathname: document.pathname,
       frontmatter: document.frontmatter,
       description: document.frontmatter.description || excerpt(document.body),
-      html: renderMarkdown(document.body, pageMap),
+      body: renderMarkdown(document.body, pageMap),
     }),
   ]),
   ['/index.html', homePage({ words, columns })],
