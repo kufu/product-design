@@ -1,9 +1,7 @@
 import { readFileSync } from 'node:fs'
-
 import { escapeHtml as esc } from './markdown.mjs'
 
-export const SITE = 'https://product-design.jp'
-
+const SITE = 'https://product-design.jp'
 const SITE_NAME = 'Product Design Wiki'
 const MAX_DESCRIPTION_LENGTH = 120
 
