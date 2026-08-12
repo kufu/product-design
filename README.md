@@ -10,30 +10,53 @@ https://product-design.jp/
 
 pnpm を推奨していますが、npm コマンドの利用も可能です。
 
-| Command             | Action                                           |
-| :------------------ | :----------------------------------------------- |
-| `pnpm install`      | Installs dependencies                            |
-| `pnpm dev`          | Starts local dev server at `localhost:4321`      |
-| `pnpm build`        | Build your production site to `./dist/`          |
-| `pnpm preview`      | Preview your build locally, before deploying     |
-| `pnpm astro ...`    | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro --help` | Get help using the Astro CLI                     |
+| Command        | Action                                       |
+| :------------- | :------------------------------------------- |
+| `pnpm install` | Installs dependencies                        |
+| `pnpm dev`     | Starts local dev server at `localhost:1234`  |
+| `pnpm build`   | Build your production site to `./dist/`      |
+| `pnpm preview` | Preview your build locally, before deploying |
+| `pnpm lint`    | Syntax check for build scripts               |
+
+ポートを変えたい場合は `PORT=2345 pnpm dev` のように指定します。
+`pnpm dev` は `src/` の変更を検知して再ビルドしますが、ブラウザの自動リロードはしないため手動でリロードしてください。
 
 ## ディレクトリ構造
 
 ```
 /
-├── public/
+├── scripts/
+│   ├── build.mjs       # ビルドスクリプト（dist/ を生成する）
+│   ├── serve.mjs       # dev/preview 用の静的サーバー
+│   ├── markdown.mjs    # Markdown・frontmatter の変換
+│   └── templates.mjs   # 各ページのHTMLテンプレート
 ├── src/
-│   └── layouts/
-│   └── pages/
-│           └── columns/
-│               └── *.md
-│           └── words/
-│               └── *.md
-│           └── skills/
+│   ├── pages/          # ページになる Markdown
+│   │   ├── columns/
+│   │   │   └── *.md
+│   │   └── words/
+│   │       └── *.md
+│   ├── css/            # style.css（HTMLに埋め込まれる）
+│   ├── data/           # skills.json
+│   ├── images/         # ここから下はアセット。dist/ 直下にコピーされる
+│   ├── favicon.ico
+│   ├── ogimage_wiki.png
+│   └── _redirects      # Cloudflare Pages のリダイレクト設定
 └── package.json
 ```
+
+## ビルドのしくみ
+
+`node scripts/build.mjs` だけで完結する静的サイトジェネレーターです。フレームワークは使っていません。
+
+- `src/pages/{words,columns}/*.md` を読み、`dist/{words,columns}/<ファイル名>/index.html` を書き出す
+- `_` で始まる Markdown（`_template.md` など）は公開されない
+- トップページ・スキル定義・404 ページは `scripts/templates.mjs` の関数がHTMLを組み立てる
+- `src/css/style.css` は各ページの `<style>` に埋め込まれる
+- `src/` のうち `pages/` `css/` `data/` と `.mjs` 以外はアセットとみなし、`dist/` 直下へそのままコピーされる（`src/images/foo.png` → `/images/foo.png`）。画像を追加するときは `src/` 配下に置くだけでよく、`scripts/build.mjs` を編集する必要はない
+- Markdown の変換には [marked](https://marked.js.org/) を利用
+
+依存パッケージは marked 1つだけです。Lint・整形ツールは置いていないため、書式は `.editorconfig` に従ってください。
 ## Product Design Wiki
 ### [WIP]用語の追加方法
 

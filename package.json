@@ -5,11 +5,11 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "node tasks/serve.mjs --watch",
-    "start": "node tasks/serve.mjs --watch",
-    "build": "node tasks/build.mjs",
-    "preview": "node tasks/serve.mjs",
-    "lint": "node --check tasks/build.mjs && node --check tasks/serve.mjs && node --check src/markdown.mjs && node --check src/templates.mjs"
+    "dev": "node scripts/serve.mjs --watch",
+    "start": "node scripts/serve.mjs --watch",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs",
+    "lint": "node --check scripts/build.mjs && node --check scripts/serve.mjs && node --check scripts/markdown.mjs && node --check scripts/templates.mjs"
   },
   "dependencies": {
     "marked": "^18.0.7"

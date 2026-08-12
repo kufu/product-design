@@ -7,7 +7,7 @@ export const SITE = 'https://product-design.jp'
 const SITE_NAME = 'Product Design Wiki'
 const MAX_DESCRIPTION_LENGTH = 120
 
-const style = readFileSync(new URL('./css/style.css', import.meta.url), 'utf-8')
+const style = readFileSync(new URL('../src/css/style.css', import.meta.url), 'utf-8')
 
 /**
  * 全ページ共通のレイアウト。

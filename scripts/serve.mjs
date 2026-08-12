@@ -5,6 +5,7 @@ import { createServer } from 'node:http'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
+const SCRIPTS_DIR = fileURLToPath(new URL('.', import.meta.url))
 const root = fileURLToPath(new URL('..', import.meta.url))
 const OUT_DIR = path.join(root, 'dist')
 
@@ -59,9 +60,7 @@ const server = createServer(async (request, response) => {
 /** ビルドは子プロセスで実行する。テンプレートを編集しても常に最新のコードが使われる */
 const runBuild = () =>
   new Promise((resolve) => {
-    const script = fileURLToPath(new URL('./build.mjs', import.meta.url))
-
-    spawn(process.execPath, [script], { stdio: 'inherit' }).on('exit', resolve)
+    spawn(process.execPath, [path.join(SCRIPTS_DIR, 'build.mjs')], { stdio: 'inherit' }).on('exit', resolve)
   })
 
 if (WATCH) {
@@ -74,9 +73,12 @@ if (WATCH) {
 
   await runBuild()
 
-  watch(path.join(root, 'src'), { recursive: true }, rebuild)
+  // コンテンツ（src/）とビルドスクリプト（このファイルのあるディレクトリ）の両方を監視する
+  for (const dir of [path.join(root, 'src'), SCRIPTS_DIR]) {
+    watch(dir, { recursive: true }, rebuild)
+  }
 
-  console.log('watching src/ for changes (ブラウザは手動でリロードしてください)')
+  console.log(`watching src/ and ${path.basename(SCRIPTS_DIR)}/ for changes (ブラウザは手動でリロードしてください)`)
 }
 
 server.on('error', (error) => {
