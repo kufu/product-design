@@ -35,3 +35,5 @@ jobs:
         run: pnpm install
       - name: linting
         run: pnpm lint
+      - name: build
+        run: pnpm build
