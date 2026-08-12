@@ -1,8 +1,9 @@
 import { Marked } from 'marked'
 
+const HTML_ESCAPES = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }
+
 /** HTMLエスケープ。テキストと属性値の両方に使う */
-export const escapeHtml = (value) =>
-  String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+export const escapeHtml = (value) => String(value).replace(/[&<>"]/g, (character) => HTML_ESCAPES[character])
 
 /**
  * frontmatterと本文を分離する。
@@ -74,11 +75,12 @@ const smartypants = (text) =>
     .replace(/'/g, '’')
 
 /**
- * Markdown本文をHTMLに変換する関数を返す。
+ * Markdown本文をHTMLに変換する。
  * pageMapは `:[タイトル]:` 記法の解決に使うタイトル→URLの対応表。
+ * 見出しidの重複判定はページごとに独立させたいので、呼び出しごとにインスタンスを作る。
  */
-export const createMarkdownRenderer = (pageMap) => {
-  let slug = createSlugger()
+export const renderMarkdown = (body, pageMap) => {
+  const slug = createSlugger()
 
   const marked = new Marked({
     extensions: [pageLinkExtension(pageMap)],
@@ -95,18 +97,14 @@ export const createMarkdownRenderer = (pageMap) => {
     },
   })
 
-  return (body) => {
-    slug = createSlugger()
-
-    return marked.parse(body)
-  }
+  return marked.parse(body)
 }
 
 /**
  * frontmatterにdescriptionがない記事のために本文から抜粋を作る。
- * Markdownの記号を落として1行に詰める。
+ * Markdownの記号を落として1行に詰める。長さの調整はテンプレート側が行う。
  */
-export const excerpt = (body, maxLength) =>
+export const excerpt = (body) =>
   body
     .replace(/^#{1,6}\s+/gm, '')
     .replace(/^\s*[>\-*+]\s*/gm, '')
@@ -115,4 +113,3 @@ export const excerpt = (body, maxLength) =>
     .replace(/[*_`~]/g, '')
     .replace(/\s+/g, ' ')
     .trim()
-    .slice(0, maxLength)

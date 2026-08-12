@@ -2,7 +2,7 @@ import { cp, mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-import { createMarkdownRenderer, excerpt, parseFrontmatter } from './markdown.mjs'
+import { excerpt, parseFrontmatter, renderMarkdown } from './markdown.mjs'
 import { articlePage, homePage, notFoundPage, skillsPage } from './templates.mjs'
 
 const root = fileURLToPath(new URL('..', import.meta.url))
@@ -57,7 +57,6 @@ const documents = [...words, ...columns]
 
 // 独自記法 `:[タイトル]:` を解決するためのタイトル→URLの対応表
 const pageMap = new Map(documents.map((document) => [document.frontmatter.title, document.pathname]))
-const renderMarkdown = createMarkdownRenderer(pageMap)
 
 const pages = [
   ...documents.map((document) => [
@@ -66,7 +65,7 @@ const pages = [
       pathname: document.pathname,
       frontmatter: document.frontmatter,
       description: document.frontmatter.description || excerpt(document.body),
-      html: renderMarkdown(document.body),
+      html: renderMarkdown(document.body, pageMap),
     }),
   ]),
   ['/index.html', homePage({ words, columns })],
