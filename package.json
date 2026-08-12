@@ -8,7 +8,8 @@
     "dev": "node tasks/serve.mjs --watch",
     "start": "node tasks/serve.mjs --watch",
     "build": "node tasks/build.mjs",
-    "preview": "node tasks/serve.mjs"
+    "preview": "node tasks/serve.mjs",
+    "lint": "node --check tasks/build.mjs && node --check tasks/serve.mjs && node --check src/markdown.mjs && node --check src/templates.mjs"
   },
   "dependencies": {
     "marked": "^18.0.7"
