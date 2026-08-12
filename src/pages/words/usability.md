@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: ユーザビリティ
 description:
 tag: word,UI

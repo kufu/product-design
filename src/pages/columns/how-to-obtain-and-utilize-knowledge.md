@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: 知識の得方と活かし方
 description:
 tag: column,開発手法

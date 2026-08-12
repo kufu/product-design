@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: UXデザイン
 description: UXデザイン（ユーザーエクスペリエンスデザイン）とは、UX “のために” プロダクトやサービスなどをデザインすること（Designing for UX）である。
 tag: word,UX

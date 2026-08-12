@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: ドメイン
 description: デジタルプロダクト開発において、プロダクトが対象とする事業・業務領域のこと。
 tag: word,その他

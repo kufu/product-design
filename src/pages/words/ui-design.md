@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: UIデザイン
 description: UIデザイン（ユーザーインターフェースデザイン）は、製品やサービスのUIを設計する行為のこと。
 tag: word,UI

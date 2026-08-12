@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: メンタルモデル
 description: メンタルモデルは元々認知心理学の用語で、「個人が現実世界をどのように認識し解釈しているか」を指す。
 tag: word,デザイン

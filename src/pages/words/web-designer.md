@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: ウェブデザイナー
 description:
 tag: word,職種

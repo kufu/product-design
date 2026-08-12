@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: WAIC
 description:
 tag: word,アクセシビリティ

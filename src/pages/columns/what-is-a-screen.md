@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: 画面とは何か
 description:
 tag: column,概念

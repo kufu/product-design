@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: リバースエンジニアリング
 description:
 tag: word,エンジニアリング

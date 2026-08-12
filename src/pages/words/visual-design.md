@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: ビジュアルデザイン
 description:
 tag: word,デザイン,ビジュアルデザイン

@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: Fireworks
 description:
 tag: word,デザインツール

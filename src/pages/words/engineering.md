@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: エンジニアリング
 description:
 tag: word,エンジニアリング

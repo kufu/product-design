@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: デザインエンジニアリング
 description: デザインエンジニアリングとは、デザインとエンジニアリングが交差する領域における課題解決の指針です。
 tag: word,occupation

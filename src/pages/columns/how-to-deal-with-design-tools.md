@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: デザインツールと私
 description:
 tag: column,デザインツール
