@@ -74,17 +74,38 @@ const runBuild = () =>
 
 if (WATCH) {
   let timer = null
+  let building = false
+  let queued = false
 
-  const rebuild = () => {
+  /** ビルドは `dist/` を作り直すので、重ならないよう直列化する */
+  const rebuild = async () => {
+    if (building) {
+      queued = true
+
+      return
+    }
+
+    building = true
+
+    do {
+      queued = false
+      await runBuild()
+    } while (queued)
+
+    building = false
+  }
+
+  /** 保存が連続したときは1回のビルドにまとめる */
+  const scheduleRebuild = () => {
     clearTimeout(timer)
-    timer = setTimeout(runBuild, 50)
+    timer = setTimeout(rebuild, 50)
   }
 
   await runBuild()
 
   // コンテンツ（src/）とビルドスクリプト（このファイルのあるディレクトリ）の両方を監視する
   for (const dir of [path.join(root, 'src'), SCRIPTS_DIR]) {
-    watch(dir, { recursive: true }, rebuild)
+    watch(dir, { recursive: true }, scheduleRebuild)
   }
 
   console.log(`watching src/ and ${path.basename(SCRIPTS_DIR)}/ for changes (ブラウザは手動でリロードしてください)`)
