@@ -9,7 +9,7 @@
     "start": "node scripts/serve.mjs --watch",
     "build": "node scripts/build.mjs",
     "preview": "node scripts/serve.mjs",
-    "lint": "node --check scripts/build.mjs && node --check scripts/serve.mjs && node --check scripts/markdown.mjs && node --check scripts/templates.mjs"
+    "lint": "node --check scripts/build.mjs && node --check scripts/serve.mjs && node --check scripts/html.mjs && node --check scripts/markdown.mjs && node --check scripts/templates.mjs"
   },
   "dependencies": {
     "marked": "^18.0.7"
