@@ -1,0 +1,118 @@
+import { Marked } from 'marked'
+
+/** HTMLエスケープ。テキストと属性値の両方に使う */
+export const escapeHtml = (value) =>
+  String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+
+/**
+ * frontmatterと本文を分離する。
+ * `key: value` を1行ずつ書く単純な形式のみを対象にしている。
+ */
+export const parseFrontmatter = (source) => {
+  const match = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?/.exec(source)
+
+  if (!match) return { frontmatter: {}, body: source }
+
+  const frontmatter = {}
+
+  for (const line of match[1].split(/\r?\n/)) {
+    const field = /^([\w-]+)\s*:\s*(.*)$/.exec(line)
+
+    if (field) frontmatter[field[1]] = field[2].trim().replace(/^(['"])(.*)\1$/, '$2')
+  }
+
+  return { frontmatter, body: source.slice(match[0].length) }
+}
+
+/** 見出しのid用。日本語をそのまま残し、記号だけを落とす */
+const slugify = (text) =>
+  text
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^\p{L}\p{N}\-_]/gu, '')
+
+/** 同一ページ内で見出しidが重複したら連番を付ける */
+const createSlugger = () => {
+  const used = new Map()
+
+  return (text) => {
+    const base = slugify(text)
+    const count = used.get(base) ?? 0
+
+    used.set(base, count + 1)
+
+    return count === 0 ? base : `${base}-${count}`
+  }
+}
+
+/**
+ * 独自記法 `:[タイトル]:` をサイト内リンクに変換するmarked拡張。
+ * タイトルが見つからない場合は404ページへ送る。
+ */
+const pageLinkExtension = (pageMap) => ({
+  name: 'pageLink',
+  level: 'inline',
+  start: (src) => src.indexOf(':['),
+  tokenizer(src) {
+    const match = /^:\[(.+?)\]:/.exec(src)
+
+    if (!match) return undefined
+
+    return { type: 'pageLink', raw: match[0], title: match[1] }
+  },
+  renderer: (token) => `<a href="${pageMap.get(token.title) ?? '/404/'}">${escapeHtml(token.title)}</a>`,
+})
+
+/** 引用符と三点リーダーを約物に置き換える（旧: Astroのsmartypants相当） */
+const smartypants = (text) =>
+  text
+    .replace(/\.{3}/g, '…')
+    .replace(/(^|[\s([{<「『（【〈《])"/g, '$1“')
+    .replace(/"/g, '”')
+    .replace(/(^|[\s([{<「『（【〈《])'/g, '$1‘')
+    .replace(/'/g, '’')
+
+/**
+ * Markdown本文をHTMLに変換する関数を返す。
+ * pageMapは `:[タイトル]:` 記法の解決に使うタイトル→URLの対応表。
+ */
+export const createMarkdownRenderer = (pageMap) => {
+  let slug = createSlugger()
+
+  const marked = new Marked({
+    extensions: [pageLinkExtension(pageMap)],
+    // 生HTMLやコード、リンクのURLには手を入れず、地の文だけを対象にする
+    walkTokens: (token) => {
+      if (token.type === 'text') token.text = smartypants(token.text)
+    },
+    renderer: {
+      heading(token) {
+        const content = this.parser.parseInline(token.tokens)
+
+        return `<h${token.depth} id="${escapeHtml(slug(token.text))}">${content}</h${token.depth}>\n`
+      },
+    },
+  })
+
+  return (body) => {
+    slug = createSlugger()
+
+    return marked.parse(body)
+  }
+}
+
+/**
+ * frontmatterにdescriptionがない記事のために本文から抜粋を作る。
+ * Markdownの記号を落として1行に詰める。
+ */
+export const excerpt = (body, maxLength) =>
+  body
+    .replace(/^#{1,6}\s+/gm, '')
+    .replace(/^\s*[>\-*+]\s*/gm, '')
+    .replace(/!?\[([^\]]*)\]\([^)]*\)/g, '$1')
+    .replace(/:\[(.+?)\]:/g, '$1')
+    .replace(/[*_`~]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, maxLength)
