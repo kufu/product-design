@@ -33,7 +33,7 @@ const readAsset = async (pathname) => {
     const file = path.join(OUT_DIR, path.normalize(candidate))
 
     // distの外を指すパスは拒否する
-    if (!file.startsWith(OUT_DIR)) return undefined
+    if (!file.startsWith(OUT_DIR + path.sep)) return undefined
 
     try {
       return { body: await readFile(file), ext: path.extname(file) }
@@ -46,15 +46,24 @@ const readAsset = async (pathname) => {
 }
 
 const server = createServer(async (request, response) => {
-  const { pathname } = new URL(request.url, `http://localhost:${PORT}`)
-  const asset = await readAsset(decodeURIComponent(pathname))
-  const fallback = asset ?? { ...(await readAsset('/404.html')), status: 404 }
+  try {
+    const { pathname } = new URL(request.url, `http://localhost:${PORT}`)
+    const asset = await readAsset(decodeURIComponent(pathname))
+    const served = asset ?? (await readAsset('/404.html'))
 
-  response.writeHead(fallback.status ?? 200, {
-    'content-type': CONTENT_TYPES[fallback.ext] ?? 'application/octet-stream',
-    'cache-control': 'no-store',
-  })
-  response.end(fallback.body)
+    response.writeHead(asset ? 200 : 404, {
+      'content-type': CONTENT_TYPES[served?.ext] ?? 'application/octet-stream',
+      'cache-control': 'no-store',
+    })
+    response.end(served?.body)
+  } catch (error) {
+    // 壊れたURL（`/%` など）でサーバーを落とさない
+    const status = error instanceof URIError ? 400 : 500
+
+    console.error(`${status} ${request.url}: ${error.message}`)
+    response.writeHead(status, { 'content-type': 'text/plain; charset=utf-8' })
+    response.end(status === 400 ? 'Bad Request' : 'Internal Server Error')
+  }
 })
 
 /** ビルドは子プロセスで実行する。テンプレートを編集しても常に最新のコードが使われる */
