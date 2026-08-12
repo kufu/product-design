@@ -23,7 +23,7 @@ const isBuildInput = (file) => {
 
   if (!relative) return false // src/ 自身はコピー対象
 
-  return BUILD_INPUTS.has(relative.split(path.sep)[0]) || /\.(mjs|cjs|js)$/.test(relative)
+  return BUILD_INPUTS.has(relative.split(path.sep)[0])
 }
 
 /** `src/pages/<collection>/*.md` を読み込む。`_` 始まりのファイルは下書き扱いで除外する */
