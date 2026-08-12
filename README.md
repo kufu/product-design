@@ -29,7 +29,8 @@ pnpm を推奨していますが、npm コマンドの利用も可能です。
 │   ├── build.mjs       # ビルドスクリプト（dist/ を生成する）
 │   ├── serve.mjs       # dev/preview 用の静的サーバー
 │   ├── markdown.mjs    # Markdown・frontmatter の変換
-│   └── templates.mjs   # 各ページのHTMLテンプレート
+│   ├── templates.mjs   # 各ページのHTMLテンプレート
+│   └── html.mjs        # HTML組み立て用のテンプレートリテラル
 ├── src/
 │   ├── pages/          # ページになる Markdown
 │   │   ├── columns/
@@ -53,7 +54,7 @@ pnpm を推奨していますが、npm コマンドの利用も可能です。
 - `_` で始まる Markdown（`_template.md` など）は公開されない
 - トップページ・スキル定義・404 ページは `scripts/templates.mjs` の関数がHTMLを組み立てる
 - `src/css/style.css` は各ページの `<style>` に埋め込まれる
-- `src/` のうち `pages/` `css/` `data/` と `.mjs` 以外はアセットとみなし、`dist/` 直下へそのままコピーされる（`src/images/foo.png` → `/images/foo.png`）。画像を追加するときは `src/` 配下に置くだけでよく、`scripts/build.mjs` を編集する必要はない
+- `src/` のうち `pages/` `css/` `data/` 以外はアセットとみなし、`dist/` 直下へそのままコピーされる（`src/images/foo.png` → `/images/foo.png`）。画像を追加するときは `src/` 配下に置くだけでよく、`scripts/build.mjs` を編集する必要はない
 - Markdown の変換には [marked](https://marked.js.org/) を利用
 
 依存パッケージは marked 1つだけです。Lint・整形ツールは置いていないため、書式は `.editorconfig` に従ってください。
