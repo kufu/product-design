@@ -60,8 +60,11 @@ const [words, columns, skills, home, notFound] = await Promise.all([
 ])
 const documents = [...words, ...columns]
 
-// 独自記法 `:[タイトル]:` を解決するためのタイトル→URLの対応表
-const pageMap = new Map(documents.map((document) => [document.frontmatter.title, document.pathname]))
+// 独自記法を解決するための材料。`:[タイトル]:` はタイトル→URLの対応表、`:list[words]:` は記事一覧を使う
+const markdown = {
+  pageMap: new Map(documents.map((document) => [document.frontmatter.title, document.pathname])),
+  collections: { words, columns },
+}
 
 const pages = [
   ...documents.map((document) => [
@@ -70,12 +73,12 @@ const pages = [
       pathname: document.pathname,
       frontmatter: document.frontmatter,
       description: document.frontmatter.description || excerpt(document.body),
-      body: renderMarkdown(document.body, pageMap),
+      body: renderMarkdown(document.body, markdown),
     }),
   ]),
-  ['/index.html', homePage({ ...home, body: renderMarkdown(home.body, pageMap), words, columns })],
+  ['/index.html', homePage({ ...home, body: renderMarkdown(home.body, markdown) })],
   ['/skills/index.html', skillsPage({ skills })],
-  ['/404.html', notFoundPage({ ...notFound, body: renderMarkdown(notFound.body, pageMap) })],
+  ['/404.html', notFoundPage({ ...notFound, body: renderMarkdown(notFound.body, markdown) })],
 ]
 
 await rm(OUT_DIR, { recursive: true, force: true })

@@ -88,21 +88,8 @@ ${
     </main>`,
   })
 
-const indexList = (documents) => html`<ul>
-${documents.map((document) => html`  <li><a href="${document.pathname}">${document.frontmatter.title}</a></li>`)}
-</ul>`
-
-/**
- * `src/pages/index.md` に置いた目印を、ビルド時に生成する一覧で置き換える。
- * 目印はHTMLコメントなので、Markdownのまま読んでも表示されても邪魔にならない。
- */
-const insertIndexLists = (body, { words, columns }) =>
-  body
-    .replace('<!-- 用語一覧 -->', () => `${indexList(words)}\n`)
-    .replace('<!-- コラム一覧 -->', () => `${indexList(columns)}\n`)
-
-/** トップページ。本文は `src/pages/index.md` */
-export const homePage = ({ frontmatter, body, words, columns }) =>
+/** トップページ。本文は `src/pages/index.md`（用語・コラムの一覧は `:list[words]:` 記法で差し込まれる） */
+export const homePage = ({ frontmatter, body }) =>
   baseLayout({
     pathname: '/',
     title: frontmatter.title,
@@ -111,7 +98,7 @@ export const homePage = ({ frontmatter, body, words, columns }) =>
       <h1>${frontmatter.title}</h1>
     </header>
     <main>
-${raw(insertIndexLists(body, { words, columns }))}
+${raw(body)}
     </main>`,
   })
 

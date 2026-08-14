@@ -1,6 +1,13 @@
 import { Marked } from 'marked'
-
 import { escapeHtml } from './html.mjs'
+
+/** 独自記法のエラー。markedが`message`に足す不具合報告の案内を外すため、元の文言を持っておく */
+class NotationError extends Error {
+  constructor(message) {
+    super(message)
+    this.original = message
+  }
+}
 
 /**
  * frontmatterと本文を分離する。
@@ -53,6 +60,8 @@ const pageLinkExtension = (pageMap) => ({
   level: 'inline',
   start: (src) => src.indexOf(':['),
   tokenizer(src) {
+
+    // `:[タイトル]:` だけが書かれた行にマッチする
     const match = /^:\[(.+?)\]:/.exec(src)
 
     if (!match) return undefined
@@ -61,6 +70,40 @@ const pageLinkExtension = (pageMap) => ({
   },
   renderer: (token) =>
     `<a href="${escapeHtml(pageMap.get(token.title) ?? '/404/')}">${escapeHtml(token.title)}</a>`,
+})
+
+/**
+ * 独自記法 `:list[words]:` を記事一覧に変換するmarked拡張。
+ * `[]` の中は `src/pages/` 配下のディレクトリ名で、collectionsは `{ words: [...], columns: [...] }`。
+ */
+const collectionListExtension = (collections) => ({
+  name: 'collectionList',
+  level: 'block',
+  // 行そのものが記法のときだけ拾う（文中に書いた `:list[words]:` はただの文字として残す）
+  start: (src) => src.search(/^:list\[/m),
+  tokenizer(src) {
+
+    // `:list[words]:` だけが書かれた行にマッチする
+    const match = /^:list\[([\w-]+)\]:[^\S\n]*(?:\n|$)/.exec(src)
+
+    if (!match) return undefined
+
+    // 打ち間違いに気づけるよう、知らないコレクション名はビルドを止める
+    if (!collections[match[1]]) {
+      throw new NotationError(
+        `:list[${match[1]}]: のコレクションがありません（使えるのは ${Object.keys(collections).join('・')}）`,
+      )
+    }
+
+    return { type: 'collectionList', raw: match[0], collection: match[1] }
+  },
+  renderer(token) {
+    const items = collections[token.collection].map(
+      (document) => `  <li><a href="${escapeHtml(document.pathname)}">${escapeHtml(document.frontmatter.title)}</a></li>`,
+    )
+
+    return `<ul>\n${items.join('\n')}\n</ul>\n`
+  },
 })
 
 /** 引用符と三点リーダーを約物に置き換える（旧: Astroのsmartypants相当） */
@@ -74,14 +117,14 @@ const smartypants = (text) =>
 
 /**
  * Markdown本文をHTMLに変換する。
- * pageMapは `:[タイトル]:` 記法の解決に使うタイトル→URLの対応表。
+ * pageMapは `:[タイトル]:` 記法に使うタイトル→URLの対応表、collectionsは `:list[words]:` 記法に使う記事一覧。
  * 見出しidの重複判定はページごとに独立させたいので、呼び出しごとにインスタンスを作る。
  */
-export const renderMarkdown = (body, pageMap) => {
+export const renderMarkdown = (body, { pageMap, collections }) => {
   const slug = createSlugger()
 
   const marked = new Marked({
-    extensions: [pageLinkExtension(pageMap)],
+    extensions: [pageLinkExtension(pageMap), collectionListExtension(collections)],
     // 生HTMLやコード、リンクのURLには手を入れず、地の文だけを対象にする
     walkTokens: (token) => {
       if (token.type === 'text') token.text = smartypants(token.text)
@@ -97,7 +140,14 @@ export const renderMarkdown = (body, pageMap) => {
     },
   })
 
-  return marked.parse(body)
+  try {
+    return marked.parse(body)
+  } catch (error) {
+    // markedは例外に「Please report this to ...」を足すので、独自記法のエラーは元の文言で投げ直す
+    if (error instanceof NotationError) throw new Error(error.original)
+
+    throw error
+  }
 }
 
 /**
