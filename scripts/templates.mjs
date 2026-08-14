@@ -12,6 +12,9 @@ const style = readFileSync(new URL('../src/css/style.css', import.meta.url), 'ut
 /** サイト名を添えたページタイトル。トップページ以外はこの形にする */
 const withSiteName = (title) => `${title} | ${SITE_NAME}`
 
+/** 長すぎる説明文を切り詰める */
+const truncate = (text, max) => (text.length > max ? `${text.slice(0, max)}...` : text)
+
 /**
  * 全ページ共通のレイアウト。
  * headerは<body>直下、contentはその下に差し込まれる。
@@ -20,10 +23,8 @@ export const baseLayout = ({ pathname, title, description, author, ogimage, head
   const canonicalUrl = `${SITE}${pathname}`
   const isChildPage = pathname.split('/').length > 3
   const pageTitle = `${title}${isChildPage ? ` | ${SITE_NAME}` : ''}`
-  const pageDescription = `${description.substring(0, MAX_DESCRIPTION_LENGTH)}${
-    description.length > MAX_DESCRIPTION_LENGTH ? '...' : ''
-  }`
   const ogimageUrl = `${SITE}/${ogimage ?? 'ogimage_wiki.png'}`
+  const pageDescription = truncate(description, MAX_DESCRIPTION_LENGTH)
 
   return String(html`<!DOCTYPE html>
 <html lang="ja">
