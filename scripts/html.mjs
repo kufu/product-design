@@ -35,4 +35,4 @@ const render = (value) => {
  * - `null` `undefined` `false` は空文字になるので `cond && html\`...\`` が書ける
  */
 export const html = (strings, ...values) =>
-  raw(strings.reduce((out, string, index) => out + render(values[index - 1]) + string))
+  raw(strings.map((string, index) => string + render(values[index])).join(''))
