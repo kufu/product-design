@@ -34,6 +34,8 @@ pnpm を推奨していますが、npm コマンドの利用も可能です。
 │   └── html.mjs        # HTML組み立て用のテンプレートリテラル
 ├── src/
 │   ├── pages/          # ページになる Markdown
+│   │   ├── index.md    # トップページの本文
+│   │   ├── 404.md      # 404 ページの本文
 │   │   ├── columns/
 │   │   │   └── *.md
 │   │   └── words/
@@ -53,7 +55,9 @@ pnpm を推奨していますが、npm コマンドの利用も可能です。
 
 - `src/pages/{words,columns}/*.md` を読み、`dist/{words,columns}/<ファイル名>/index.html` を書き出す
 - `_` で始まる Markdown（`_template.md` など）は公開されない
-- トップページ・スキル定義・404 ページは `scripts/templates.mjs` の関数がHTMLを組み立てる
+- トップページは `src/pages/index.md`、404 ページは `src/pages/404.md` が本文になる。frontmatter の `title` が `<h1>` と `<title>`、`description` が `<meta name="description">` と OGP に使われる
+- トップページの用語一覧・コラム一覧は、`src/pages/index.md` に置いた目印のコメント（`<!-- 用語一覧 -->` `<!-- コラム一覧 -->`）をビルド時に差し替えて生成する。見出しや説明文の変更は Markdown 側だけで完結する
+- スキル定義ページ（`src/data/skills.json` を読む）と全ページ共通のレイアウトは `scripts/templates.mjs` が組み立てる
 - `src/css/style.css` は各ページの `<style>` に埋め込まれる
 - `src/` のうち `pages/` `css/` `data/` 以外はアセットとみなし、`dist/` 直下へそのままコピーされる（`src/images/foo.png` → `/images/foo.png`）。画像を追加するときは `src/` 配下に置くだけでよく、`scripts/build.mjs` を編集する必要はない
 - Markdown の変換には [marked](https://marked.js.org/) を利用

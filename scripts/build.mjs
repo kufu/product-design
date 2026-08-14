@@ -41,6 +41,9 @@ const readCollection = async (collection) => {
   )
 }
 
+/** `src/pages/` 直下の単体ページ（トップページ・404ページ）を読み込む */
+const readPage = async (file) => parseFrontmatter(await readFile(path.join(PAGES_DIR, file), 'utf-8'))
+
 const writePage = async (pathname, html) => {
   const file = path.join(OUT_DIR, pathname.replace(/^\//, ''))
 
@@ -48,10 +51,12 @@ const writePage = async (pathname, html) => {
   await writeFile(file, html)
 }
 
-const [words, columns, skills] = await Promise.all([
+const [words, columns, skills, home, notFound] = await Promise.all([
   readCollection('words'),
   readCollection('columns'),
   readFile(path.join(SRC_DIR, 'data/skills.json'), 'utf-8').then(JSON.parse),
+  readPage('index.md'),
+  readPage('404.md'),
 ])
 const documents = [...words, ...columns]
 
@@ -68,9 +73,9 @@ const pages = [
       body: renderMarkdown(document.body, pageMap),
     }),
   ]),
-  ['/index.html', homePage({ words, columns })],
+  ['/index.html', homePage({ ...home, body: renderMarkdown(home.body, pageMap), words, columns })],
   ['/skills/index.html', skillsPage({ skills })],
-  ['/404.html', notFoundPage()],
+  ['/404.html', notFoundPage({ ...notFound, body: renderMarkdown(notFound.body, pageMap) })],
 ]
 
 await rm(OUT_DIR, { recursive: true, force: true })

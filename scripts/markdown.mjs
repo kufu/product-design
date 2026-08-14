@@ -89,8 +89,10 @@ export const renderMarkdown = (body, pageMap) => {
     renderer: {
       heading(token) {
         const content = this.parser.parseInline(token.tokens)
+        // 見出し内のリンクや強調はidに含めない（`## [スキル定義](/skills/)` → `id="スキル定義"`）
+        const label = content.replace(/<[^>]*>/g, '').replace(/&[a-z]+;/g, '')
 
-        return `<h${token.depth} id="${escapeHtml(slug(token.text))}">${content}</h${token.depth}>\n`
+        return `<h${token.depth} id="${escapeHtml(slug(label))}">${content}</h${token.depth}>\n`
       },
     },
   })

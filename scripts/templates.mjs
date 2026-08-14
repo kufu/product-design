@@ -88,42 +88,31 @@ ${
     </main>`,
   })
 
-const indexList = (documents) => html`      <ul>
-${documents.map((document) => html`        <li><a href="${document.pathname}">${document.frontmatter.title}</a></li>`)}
-      </ul>`
+const indexList = (documents) => html`<ul>
+${documents.map((document) => html`  <li><a href="${document.pathname}">${document.frontmatter.title}</a></li>`)}
+</ul>`
 
-/** トップページ */
-export const homePage = ({ words, columns }) =>
+/**
+ * `src/pages/index.md` に置いた目印を、ビルド時に生成する一覧で置き換える。
+ * 目印はHTMLコメントなので、Markdownのまま読んでも表示されても邪魔にならない。
+ */
+const insertIndexLists = (body, { words, columns }) =>
+  body
+    .replace('<!-- 用語一覧 -->', () => `${indexList(words)}\n`)
+    .replace('<!-- コラム一覧 -->', () => `${indexList(columns)}\n`)
+
+/** トップページ。本文は `src/pages/index.md` */
+export const homePage = ({ frontmatter, body, words, columns }) =>
   baseLayout({
     pathname: '/',
-    title: SITE_NAME,
-    description:
-      'Product Design Wikiでは、プロダクトデザイングループ内で獲得した知見、スキル定義、学習コンテンツを掲載しています。プロダクトデザインに関わる人はどなたでも利用・参加できます。',
+    title: frontmatter.title,
+    description: frontmatter.description,
     content: html`    <header>
-      <h1>${SITE_NAME}</h1>
-      <p>
-        Product Design Wikiへようこそ。SmartHR
-        プロダクトデザイングループ内で獲得した知見、スキル定義、学習コンテンツを掲載しています。プロダクトデザインに関わる人はどなたでも利用・参加できます。
-      </p>
+      <h1>${frontmatter.title}</h1>
     </header>
-    <section>
-      <header>
-        <h2>用語</h2>
-        <p>プロダクトデザイングループ内で整理した用語を掲載しています。</p>
-      </header>
-${indexList(words)}
-    </section>
-    <section>
-      <header>
-        <h2>コラム</h2>
-        <p>SmartHRに所属するプロダクトデザイナーが書いたコラムを掲載しています。</p>
-      </header>
-${indexList(columns)}
-    </section>
-    <section>
-      <h2><a href="/skills/">スキル定義</a></h2>
-      <p>SmartHRではプロダクトデザイナーが必要とされる技能をスキルとして定義しています。</p>
-    </section>`,
+    <main>
+${raw(insertIndexLists(body, { words, columns }))}
+    </main>`,
   })
 
 const skillLevels = (levels) =>
@@ -186,22 +175,21 @@ ${skillList(skills)}
     </section>`,
   })
 
-/** 404ページ */
-export const notFoundPage = () =>
+/** 404ページ。本文は `src/pages/404.md` */
+export const notFoundPage = ({ frontmatter, body }) =>
   baseLayout({
     pathname: '/404/',
-    title: withSiteName('404 Page Not Found'),
-    description:
-      '申し訳ありませんが、お探しのページは見つかりませんでした。お手数ですが、URLを確認してもう一度アクセスしてください。',
+    title: withSiteName(frontmatter.title),
+    description: frontmatter.description,
     header: html`    <header>
       <a href="/">Product Design</a>
     </header>`,
     content: html`    <main>
       <article>
         <header>
-          <h1>404 Page Not Found</h1>
+          <h1>${frontmatter.title}</h1>
         </header>
-        <p>申し訳ありませんが、お探しのページは見つかりませんでした。お手数ですが、URLを確認してもう一度アクセスしてください。</p>
+${raw(body)}
       </article>
     </main>`,
   })
