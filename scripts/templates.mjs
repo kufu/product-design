@@ -4,6 +4,7 @@ import { html, raw } from './html.mjs'
 
 const SITE = 'https://product-design.jp'
 const SITE_NAME = 'Product Design Wiki'
+const OG_IMAGE_URL = `${SITE}/ogimage_wiki.png`
 const MAX_DESCRIPTION_LENGTH = 120
 
 const style = readFileSync(new URL('../src/css/style.css', import.meta.url), 'utf-8')
@@ -35,7 +36,7 @@ export const baseLayout = ({ pathname, title, description, author, ogimage, head
     <meta property="og:type" content="website" />
     <meta property="og:title" content="${pageTitle}" />
     <meta property="og:description" content="${pageDescription}" />
-    <meta property="og:image" content="${ogimageUrl}" />
+    <meta property="og:image" content="${OG_IMAGE_URL}" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="${pageTitle}" />
@@ -44,7 +45,7 @@ export const baseLayout = ({ pathname, title, description, author, ogimage, head
     <meta name="twitter:creator" content="@SmartHR_jp" />
     <meta name="twitter:title" content="${pageTitle}" />
     <meta name="twitter:description" content="${pageDescription}" />
-    <meta name="twitter:image" content="${ogimageUrl}" />
+    <meta name="twitter:image" content="${OG_IMAGE_URL}" />
     <style>${raw(style)}</style>
   </head>
   <body>
@@ -97,7 +98,6 @@ export const homePage = ({ words, columns }) =>
     title: SITE_NAME,
     description:
       'Product Design Wikiでは、プロダクトデザイングループ内で獲得した知見、スキル定義、学習コンテンツを掲載しています。プロダクトデザインに関わる人はどなたでも利用・参加できます。',
-    ogimage: 'ogimage_wiki.png',
     content: html`    <header>
       <h1>${SITE_NAME}</h1>
       <p>
