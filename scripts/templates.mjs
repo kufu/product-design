@@ -9,6 +9,9 @@ const MAX_DESCRIPTION_LENGTH = 120
 
 const style = readFileSync(new URL('../src/css/style.css', import.meta.url), 'utf-8')
 
+/** サイト名を添えたページタイトル。トップページ以外はこの形にする */
+const withSiteName = (title) => `${title} | ${SITE_NAME}`
+
 /**
  * 全ページ共通のレイアウト。
  * headerは<body>直下、contentはその下に差し込まれる。
@@ -64,7 +67,7 @@ ${content}
 export const articlePage = ({ pathname, frontmatter, description, body }) =>
   baseLayout({
     pathname,
-    title: frontmatter.title,
+    title: withSiteName(frontmatter.title),
     description,
     author: frontmatter.author,
     header: html`    <header>
@@ -150,7 +153,7 @@ ${skillLevels(skill.levels)}
 export const skillsPage = ({ skills }) =>
   baseLayout({
     pathname: '/skills/',
-    title: `スキル定義 | ${SITE_NAME}`,
+    title: withSiteName('スキル定義'),
     description:
       'SmartHRではプロダクトデザイナーに必要とされる技能をスキルとして定義しています。各スキルを5段階で定義しています。',
     header: html`    <header>
@@ -189,7 +192,7 @@ ${skillList(skills)}
 export const notFoundPage = () =>
   baseLayout({
     pathname: '/404/',
-    title: `404 Page Not Found | ${SITE_NAME}`,
+    title: withSiteName('404 Page Not Found'),
     description:
       '申し訳ありませんが、お探しのページは見つかりませんでした。お手数ですが、URLを確認してもう一度アクセスしてください。',
     header: html`    <header>
