@@ -1,14 +1,12 @@
-import { spawn } from 'node:child_process'
-import { watch } from 'node:fs'
 import { readFile } from 'node:fs/promises'
 import { createServer } from 'node:http'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-const SCRIPTS_DIR = fileURLToPath(new URL('.', import.meta.url))
+import { buildAndWatch } from './watch.mjs'
+
 const root = fileURLToPath(new URL('..', import.meta.url))
 const OUT_DIR = path.join(root, 'dist')
-
 const PORT = Number(process.env.PORT ?? 1234)
 const WATCH = process.argv.includes('--watch')
 
@@ -25,37 +23,42 @@ const CONTENT_TYPES = {
   '.woff2': 'font/woff2',
 }
 
-/** dist配下のファイルを返す。ディレクトリならindex.htmlにフォールバックする */
+/** URLのパスに対応するdist/配下のファイルを読む。ディレクトリならその中のindex.htmlを読む */
 const readAsset = async (pathname) => {
-  const candidates = pathname.endsWith('/') ? [path.join(pathname, 'index.html')] : [pathname, path.join(pathname, 'index.html')]
+  const file = path.join(OUT_DIR, pathname)
 
-  for (const candidate of candidates) {
-    const file = path.join(OUT_DIR, path.normalize(candidate))
+  // パストラバーサル（`/../secret`）でdist/の外を指しているか。先頭の階層が`..`なら外に出ている
+  if (path.relative(OUT_DIR, file).split(path.sep)[0] === '..') return undefined
 
-    // distの外を指すパスは拒否する
-    if (!file.startsWith(OUT_DIR + path.sep)) return undefined
+  for (const f of [file, path.join(file, 'index.html')]) {
+    // 存在しない・ディレクトリだった場合はundefinedになるので、次の候補を試す
+    const body = await readFile(f).catch(() => undefined)
 
-    try {
-      return { body: await readFile(file), ext: path.extname(file) }
-    } catch {
-      continue
-    }
+    // 存在する時のみ返す
+    if (body) return { body, ext: path.extname(f) }
   }
 
   return undefined
+}
+
+const sendAsset = (response, status, asset) => {
+  response.writeHead(status, {
+    'content-type': CONTENT_TYPES[asset?.ext] ?? 'application/octet-stream',
+    'cache-control': 'no-store',
+  })
+  response.end(asset?.body)
 }
 
 const server = createServer(async (request, response) => {
   try {
     const { pathname } = new URL(request.url, `http://localhost:${PORT}`)
     const asset = await readAsset(decodeURIComponent(pathname))
-    const served = asset ?? (await readAsset('/404.html'))
 
-    response.writeHead(asset ? 200 : 404, {
-      'content-type': CONTENT_TYPES[served?.ext] ?? 'application/octet-stream',
-      'cache-control': 'no-store',
-    })
-    response.end(served?.body)
+    if (asset) {
+      sendAsset(response, 200, asset)
+    } else {
+      sendAsset(response, 404, await readAsset('/404.html'))
+    }
   } catch (error) {
     // 壊れたURL（`/%` など）でサーバーを落とさない
     const status = error instanceof URIError ? 400 : 500
@@ -66,58 +69,13 @@ const server = createServer(async (request, response) => {
   }
 })
 
-/** ビルドは子プロセスで実行する。テンプレートを編集しても常に最新のコードが使われる */
-const runBuild = () =>
-  new Promise((resolve) => {
-    spawn(process.execPath, [path.join(SCRIPTS_DIR, 'build.mjs')], { stdio: 'inherit' }).on('exit', resolve)
-  })
-
-if (WATCH) {
-  let timer = null
-  let building = false
-  let queued = false
-
-  /** ビルドは `dist/` を作り直すので、重ならないよう直列化する */
-  const rebuild = async () => {
-    if (building) {
-      queued = true
-
-      return
-    }
-
-    building = true
-
-    do {
-      queued = false
-      await runBuild()
-    } while (queued)
-
-    building = false
-  }
-
-  /** 保存が連続したときは1回のビルドにまとめる */
-  const scheduleRebuild = () => {
-    clearTimeout(timer)
-    timer = setTimeout(rebuild, 50)
-  }
-
-  await runBuild()
-
-  // コンテンツ（src/）とビルドスクリプト（このファイルのあるディレクトリ）の両方を監視する
-  for (const dir of [path.join(root, 'src'), SCRIPTS_DIR]) {
-    watch(dir, { recursive: true }, scheduleRebuild)
-  }
-
-  console.log(`watching src/ and ${path.basename(SCRIPTS_DIR)}/ for changes (ブラウザは手動でリロードしてください)`)
-}
-
 server.on('error', (error) => {
-  if (error.code === 'EADDRINUSE') {
-    console.error(`ポート${PORT}は使用中です。PORT=2345 pnpm dev のように別のポートを指定してください。`)
-    process.exit(1)
-  }
+  if (error.code !== 'EADDRINUSE') throw error
 
-  throw error
+  console.error(`ポート${PORT}は使用中です。PORT=2345 pnpm dev のように別のポートを指定してください。`)
+  process.exit(1)
 })
+
+if (WATCH) await buildAndWatch()
 
 server.listen(PORT, 'localhost', () => console.log(`http://localhost:${PORT}/`))

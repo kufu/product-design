@@ -27,7 +27,8 @@ pnpm を推奨していますが、npm コマンドの利用も可能です。
 /
 ├── scripts/
 │   ├── build.mjs       # ビルドスクリプト（dist/ を生成する）
-│   ├── serve.mjs       # dev/preview 用の静的サーバー
+│   ├── serve.mjs       # dev/preview 用の静的サーバー（dist/ を配信する）
+│   ├── watch.mjs       # --watch オプションを渡した時の再ビルド（src/ と scripts/ の変更）を監視する
 │   ├── markdown.mjs    # Markdown・frontmatter の変換
 │   ├── templates.mjs   # 各ページのHTMLテンプレート
 │   └── html.mjs        # HTML組み立て用のテンプレートリテラル
