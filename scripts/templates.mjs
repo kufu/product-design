@@ -19,18 +19,15 @@ const truncate = (text, max) => (text.length > max ? `${text.slice(0, max)}...` 
  * 全ページ共通のレイアウト。
  * headerは<body>直下、contentはその下に差し込まれる。
  */
-export const baseLayout = ({ pathname, title, description, author, ogimage, header = '', content }) => {
+export const baseLayout = ({ pathname, title, description, author, header = '', content }) => {
   const canonicalUrl = `${SITE}${pathname}`
-  const isChildPage = pathname.split('/').length > 3
-  const pageTitle = `${title}${isChildPage ? ` | ${SITE_NAME}` : ''}`
-  const ogimageUrl = `${SITE}/${ogimage ?? 'ogimage_wiki.png'}`
   const pageDescription = truncate(description, MAX_DESCRIPTION_LENGTH)
 
   return String(html`<!DOCTYPE html>
 <html lang="ja">
   <head>
     <meta charset="utf-8" />
-    <title>${pageTitle}</title>
+    <title>${title}</title>
     <link rel="canonical" href="${canonicalUrl}" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="creator" content="株式会社SmartHR" />
@@ -38,16 +35,16 @@ export const baseLayout = ({ pathname, title, description, author, ogimage, head
     ${author && html`<meta name="author" content="${author}" />`}
     <meta property="og:url" content="${canonicalUrl}" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="${pageTitle}" />
+    <meta property="og:title" content="${title}" />
     <meta property="og:description" content="${pageDescription}" />
     <meta property="og:image" content="${OG_IMAGE_URL}" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="${pageTitle}" />
+    <meta property="og:image:alt" content="${title}" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@SmartHR_jp" />
     <meta name="twitter:creator" content="@SmartHR_jp" />
-    <meta name="twitter:title" content="${pageTitle}" />
+    <meta name="twitter:title" content="${title}" />
     <meta name="twitter:description" content="${pageDescription}" />
     <meta name="twitter:image" content="${OG_IMAGE_URL}" />
     <style>${raw(style)}</style>
