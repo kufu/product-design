@@ -2,8 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import IndexList from '../components/IndexList.astro'
 
-const words = await Astro.glob('./words/[!_]*.{md,mdx}')
-const columns = await Astro.glob('./columns/[!_]*.{md,mdx}')
+const words = Object.values(import.meta.glob('./words/[!_]*.{md,mdx}', { eager: true }))
+const columns = Object.values(import.meta.glob('./columns/[!_]*.{md,mdx}', { eager: true }))
 ---
 
 <BaseLayout
