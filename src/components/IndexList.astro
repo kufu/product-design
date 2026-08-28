@@ -1,6 +1,8 @@
 ---
+import type { MarkdownInstance } from 'astro'
+
 export interface Props {
-  documents: Record<string, any>[]
+  documents: MarkdownInstance<{ title: string }>[]
 }
 
 const { documents } = Astro.props
