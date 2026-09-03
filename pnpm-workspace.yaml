@@ -3,3 +3,6 @@ minimumReleaseAge: 10080
 allowBuilds:
   esbuild: true
   sharp: true
+minimumReleaseAgeExclude:
+  # Renovate security update: astro@7.1.0
+  - astro@7.1.0
