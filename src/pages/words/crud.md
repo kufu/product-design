@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: CRUD
 description: CRUD（クラッド）は、データを永続的に操作する際に必要な基本機能を表す頭文字（Create, Read, Update, Delete）を組み合わせた言葉。
 tag: word,IA

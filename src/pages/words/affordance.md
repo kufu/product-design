@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: アフォーダンス
 description:
 tag: word,UI

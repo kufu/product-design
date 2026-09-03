@@ -10,30 +10,59 @@ https://product-design.jp/
 
 pnpm を推奨していますが、npm コマンドの利用も可能です。
 
-| Command             | Action                                           |
-| :------------------ | :----------------------------------------------- |
-| `pnpm install`      | Installs dependencies                            |
-| `pnpm dev`          | Starts local dev server at `localhost:4321`      |
-| `pnpm build`        | Build your production site to `./dist/`          |
-| `pnpm preview`      | Preview your build locally, before deploying     |
-| `pnpm astro ...`    | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro --help` | Get help using the Astro CLI                     |
+| Command        | Action                                       |
+| :------------- | :------------------------------------------- |
+| `pnpm install` | Installs dependencies                        |
+| `pnpm dev`     | Starts local dev server at `localhost:1234`  |
+| `pnpm build`   | Build your production site to `./dist/`      |
+| `pnpm preview` | Preview your build locally, before deploying |
+| `pnpm lint`    | Syntax check for build scripts               |
+
+ポートを変えたい場合は `PORT=2345 pnpm dev` のように指定します。
+`pnpm dev` は `src/` の変更を検知して再ビルドしますが、ブラウザの自動リロードはしないため手動でリロードしてください。
 
 ## ディレクトリ構造
 
 ```
 /
-├── public/
+├── scripts/
+│   ├── build.mjs       # ビルドスクリプト（dist/ を生成する）
+│   ├── serve.mjs       # dev/preview 用の静的サーバー（dist/ を配信する）
+│   ├── watch.mjs       # --watch オプションを渡した時の再ビルド（src/ と scripts/ の変更）を監視する
+│   ├── markdown.mjs    # Markdown・frontmatter の変換
+│   ├── templates.mjs   # 各ページのHTMLテンプレート
+│   └── html.mjs        # HTML組み立て用のテンプレートリテラル
 ├── src/
-│   └── layouts/
-│   └── pages/
-│           └── columns/
-│               └── *.md
-│           └── words/
-│               └── *.md
-│           └── skills/
+│   ├── pages/          # ページになる Markdown
+│   │   ├── index.md    # トップページの本文
+│   │   ├── 404.md      # 404 ページの本文
+│   │   ├── columns/
+│   │   │   └── *.md
+│   │   └── words/
+│   │       └── *.md
+│   ├── css/            # style.css（HTMLに埋め込まれる）
+│   ├── data/           # skills.json
+│   ├── images/         # ここから下はアセット。dist/ 直下にコピーされる
+│   ├── favicon.ico
+│   ├── ogimage_wiki.png
+│   └── _redirects      # Cloudflare Pages のリダイレクト設定
 └── package.json
 ```
+
+## ビルドのしくみ
+
+`node scripts/build.mjs` だけで完結する静的サイトジェネレーターです。フレームワークは使っていません。
+
+- `src/pages/{words,columns}/*.md` を読み、`dist/{words,columns}/<ファイル名>/index.html` を書き出す
+- `_` で始まる Markdown（`_template.md` など）は公開されない
+- トップページは `src/pages/index.md`、404 ページは `src/pages/404.md` が本文になる。frontmatter の `title` が `<h1>` と `<title>`、`description` が `<meta name="description">` と OGP に使われる
+- トップページの用語一覧・コラム一覧は、`src/pages/index.md` に書いた独自記法 `:list[words]:` `:list[columns]:` から生成する（後述の「独自Markdown記法」を参照）
+- スキル定義ページ（`src/data/skills.json` を読む）と全ページ共通のレイアウトは `scripts/templates.mjs` が組み立てる
+- `src/css/style.css` は各ページの `<style>` に埋め込まれる
+- `src/` のうち `pages/` `css/` `data/` 以外はアセットとみなし、`dist/` 直下へそのままコピーされる（`src/images/foo.png` → `/images/foo.png`）。画像を追加するときは `src/` 配下に置くだけでよく、`scripts/build.mjs` を編集する必要はない
+- Markdown の変換には [marked](https://marked.js.org/) を利用
+
+依存パッケージは marked 1つだけです。Lint・整形ツールは置いていないため、書式は `.editorconfig` に従ってください。
 ## Product Design Wiki
 ### [WIP]用語の追加方法
 
@@ -54,3 +83,14 @@ Product Design Wikiではドキュメントの利便性を高めるための記�
 ```
 このリンクは:[タイトル]:へ遷移します。
 ```
+
+### 記事一覧の差し込み
+
+以下の記法だけを1行に書いた場合、`src/pages/` 配下の該当ディレクトリにある記事へのリンク一覧に置き換わります。トップページの用語一覧・コラム一覧はこの記法で作っています。
+
+```
+:list[words]:
+:list[columns]:
+```
+
+`[]` の中はディレクトリ名です。存在しない名前を書いた場合はビルドが失敗します。

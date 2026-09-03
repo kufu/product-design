@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: アクセシビリティ試験
 description:
 tag: word,アクセシビリティ

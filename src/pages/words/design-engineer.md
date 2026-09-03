@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: デザインエンジニア
 description: 
 tag: word,occupation

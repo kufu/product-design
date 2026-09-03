@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: スクラムとフロー効率、フィーチャーチーム構想
 description:
 tag: column,開発手法

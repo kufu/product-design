@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: 情報アーキテクト
 description: 情報アーキテクトは、情報アーキテクチャの従事者のこと
 tag: word,IA

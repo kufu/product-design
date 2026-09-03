@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: オブジェクトデータモデル
 description:
 tag: word,IA,UI

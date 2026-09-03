@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: ヒューリスティック調査
 description:
 tag: word,開発手法
