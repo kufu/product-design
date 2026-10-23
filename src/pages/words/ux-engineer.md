@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: UXエンジニア
 description:
 tag: word,UX

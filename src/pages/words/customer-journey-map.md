@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: カスタマージャーニーマップ
 description:
 tag: word,開発手法

@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: リバースモデリング
 description:
 tag: word,IA

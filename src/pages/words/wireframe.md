@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: ワイヤーフレーム
 description: ワイヤーフレームとは、各画面にどのような要素（テキストや画像、ボタンなど）が載るのかを、簡易な形で視覚化したもの。
 tag: word,IA

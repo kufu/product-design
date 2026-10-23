@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: ソフトウェアエンジニアリング
 description:
 tag: word,エンジニアリング

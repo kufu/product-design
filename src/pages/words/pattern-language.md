@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: パターン・ランゲージ
 description: 繰り返し現れる課題を解決に導く具体的な方策を記述したものを「パターン」と呼び、パターンを集めて1つの体系としてまとめあげたものを「パターン・ランゲージ」と呼ぶ。
 tag: word,IA

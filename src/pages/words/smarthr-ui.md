@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: SmartHR UI
 description:
 tag: word,サービス

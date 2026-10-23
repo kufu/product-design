@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: お金になることの大切さ
 description:
 tag: column,プロデザを取り巻く環境

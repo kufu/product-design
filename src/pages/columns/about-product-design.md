@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: プロダクトデザインとは
 description:
 tag: column,デザイン

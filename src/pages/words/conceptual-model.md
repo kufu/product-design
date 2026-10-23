@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: 概念モデル
 description:
 tag: word,IA

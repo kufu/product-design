@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: オブジェクト
 description: オブジェクトとは一般的に「〜に向かって」という意味の接頭語のobと「投げる」という意味の接尾語のjectを組み合わせて「物体」や「対象」を意味する英単語を意味する。
 tag: word, object, オブジェクト

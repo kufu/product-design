@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: データモデリング
 description:
 tag: word,開発手法

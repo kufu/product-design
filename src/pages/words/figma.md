@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: Figma
 description:
 tag: word,デザインツール

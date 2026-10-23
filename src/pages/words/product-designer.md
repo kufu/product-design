@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: プロダクトデザイナー
 description: プロダクトデザイナーとはプロダクトデザインを手がけるデザイナーのことである。
 tag: word,occupation

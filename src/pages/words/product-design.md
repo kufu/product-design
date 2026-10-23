@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: プロダクトデザイン
 description:
 tag: word,デザイン

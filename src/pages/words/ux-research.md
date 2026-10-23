@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: UXリサーチ
 description:
 tag: word,UX

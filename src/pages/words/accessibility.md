@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: アクセシビリティ
 description:
 tag: word,アクセシビリティ

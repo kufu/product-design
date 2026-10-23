@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: 音声ブラウザ
 description:
 tag: word,ツール

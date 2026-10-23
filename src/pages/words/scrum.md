@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: スクラム
 description: アジャイル開発の一種で、チームが迅速かつ柔軟に開発を進めるためのフレームワーク。
 tag: word,開発手法

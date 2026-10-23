@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: 支援技術
 description:
 tag: column,プロデザを取り巻く環境

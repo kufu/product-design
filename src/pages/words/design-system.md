@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: デザインシステム
 description: デザインシステムは、デザインとエンジニアリングが不可分であるプロダクト開発において、生産性を向上するための手段。
 tag: word,ui

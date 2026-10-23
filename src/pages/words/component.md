@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: コンポーネント
 description: コンポーネントとは、「部品」や「構成要素」を意味する英単語。
 tag: word,UI

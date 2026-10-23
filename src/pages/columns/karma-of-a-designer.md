@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: 「デザイナー」というカルマ
 description:
 tag: column,デザイン

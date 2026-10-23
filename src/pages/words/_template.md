@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: Template
 description: Template
 tag: NG,column,word

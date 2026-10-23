@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: ユースケースにもとづくUIデザイン
 description:
 tag: column,デザイン

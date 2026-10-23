@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/ArticleLayout.astro
 title: ブラウザ
 description: ブラウザとは、ウェブページを閲覧するためのアプリケーション。
 tag: word,ツール
