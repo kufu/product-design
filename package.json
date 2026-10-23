@@ -10,13 +10,12 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint:code": "eslint --ext 'src/**/*.{ts,astro}'",
+    "lint:code": "eslint .",
     "lint": "run-p lint:*",
-    "format": "eslint --fix --ext 'src/**/*.{ts,astro}'"
+    "format": "eslint --fix ."
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^7.2.3",
-    "@eslint/eslintrc": "^3.3.4",
     "@eslint/js": "^10.0.1",
     "astro": "^7.0.0",
     "astro-compress": "^2.3.9",

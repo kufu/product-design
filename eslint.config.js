@@ -1,32 +1,40 @@
-const { defineConfig } = require('eslint/config')
-
-const parser = require('astro-eslint-parser')
 const js = require('@eslint/js')
+const globals = require('globals')
+const tsPlugin = require('@typescript-eslint/eslint-plugin')
+const astroPlugin = require('eslint-plugin-astro')
 
-const { FlatCompat } = require('@eslint/eslintrc')
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all,
-})
+const { defineConfig, globalIgnores } = require('eslint/config')
 
 module.exports = defineConfig([
+  globalIgnores(['dist/', '.astro/']),
+
+  js.configs.recommended,
+  tsPlugin.configs['flat/recommended'],
+  astroPlugin.configs['flat/recommended'],
+
   {
-    extends: compat.extends('plugin:astro/recommended'),
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+      },
+
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+    },
   },
+
   {
-    files: ['**/*.astro'],
+    // Node上で実行される設定ファイル類
+    files: ['*.js', '*.cjs', '*.mjs'],
 
     languageOptions: {
-      parser: parser,
-
-      parserOptions: {
-        parser: '@typescript-eslint/parser',
-        extraFileExtensions: ['.astro'],
+      globals: {
+        ...globals.node,
       },
     },
 
-    rules: {},
+    rules: {
+      '@typescript-eslint/no-require-imports': 'off',
+    },
   },
 ])
