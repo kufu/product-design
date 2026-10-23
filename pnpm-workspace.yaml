@@ -3,3 +3,8 @@ minimumReleaseAge: 10080
 allowBuilds:
   esbuild: true
   sharp: true
+
+overrides:
+  deepmerge-ts@<8.0.0: '^8.0.2'
+  sharp@<0.35.4: '^0.35.4'
+  svgo@4: '^4.1.0'
