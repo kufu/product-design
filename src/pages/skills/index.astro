@@ -35,23 +35,21 @@ import skills from '../../data/skills.json'
   </section>
   <section>
     <h2>スキル定義一覧</h2>
-    {
-      skills.map((skill) => (
-        <div>
-          <h3>{skill.label}</h3>
-          {skill.description && <p>{skill.description}</p>}
-          <ul>
-            {skill.levels.map((level, levelNumber) => (
-              <li>
-                レベル{levelNumber + 1}
-                <ul>
-                  <li>{level}</li>
-                </ul>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))
-    }
+    {skills.map((skill) => (
+      <div>
+        <h3>{skill.label}</h3>
+        {skill.description && <p>{skill.description}</p>}
+        <ul>
+          {skill.levels.map((level, levelNumber) => (
+            <li>
+              レベル{levelNumber + 1}
+              <ul>
+                <li>{level}</li>
+              </ul>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
   </section>
 </BaseLayout>
