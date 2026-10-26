@@ -20,14 +20,12 @@ const description = content.description ? content.description : rawContent().sub
         <h1>{content.title}</h1>
       </header>
       <slot />
-      {
-        content.author && (
-          <dl>
-            <dt>著者</dt>
-            <dd>{content.author}</dd>
-          </dl>
-        )
-      }
+      {content.author && (
+        <dl>
+          <dt>著者</dt>
+          <dd>{content.author}</dd>
+        </dl>
+      )}
     </article>
     <!-- <p>
       <a href={editUrl}>ページを編集する</a>
