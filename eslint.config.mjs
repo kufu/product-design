@@ -1,11 +1,10 @@
-const js = require('@eslint/js')
-const globals = require('globals')
-const tsPlugin = require('@typescript-eslint/eslint-plugin')
-const astroPlugin = require('eslint-plugin-astro')
+import js from '@eslint/js'
+import globals from 'globals'
+import tsPlugin from '@typescript-eslint/eslint-plugin'
+import astroPlugin from 'eslint-plugin-astro'
+import { defineConfig, globalIgnores } from 'eslint/config'
 
-const { defineConfig, globalIgnores } = require('eslint/config')
-
-module.exports = defineConfig([
+export default defineConfig([
   globalIgnores(['dist/', '.astro/']),
 
   js.configs.recommended,
