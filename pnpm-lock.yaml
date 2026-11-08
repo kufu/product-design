@@ -27,7 +27,7 @@ importers:
         version: 2.4.3(@astrojs/markdown-remark@7.3.0(supports-color@5.5.0))(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(@types/node@26.1.2)
       globals:
         specifier: ^17.3.0
-        version: 17.12.0
+        version: 17.14.0
       unist-util-visit:
         specifier: ^5.1.0
         version: 5.1.0
@@ -1508,8 +1508,8 @@ packages:
     resolution: {integrity: sha512-XxwI8EOhVQgWp6iDL+3b0r86f4d6AX6zSU55HfB4ydCEuXLXc5FcYeOu+nnGftS4TEju/11rt4KJPTMgbfmv4A==}
     engines: {node: '>=10.13.0'}
 
-  globals@17.12.0:
-    resolution: {integrity: sha512-cezEd/DTyyht9cvSSURyygXPfy04GtWO/5e6ZPvH7fCtjKz9PYOmuawphw1Ctd1f6C+5JypXfGD7ahNMXvevBA==}
+  globals@17.14.0:
+    resolution: {integrity: sha512-UtdkTVyAJePQv0J2M9Xe4L0ruNSDV314XiIJsADI2Zf40bcdAonE/D/OhAU8AT99oij9mhLByb+NvA3QWZYgCg==}
     engines: {node: '>=18'}
 
   globalthis@1.0.4:
@@ -4386,7 +4386,7 @@ snapshots:
       astro-eslint-parser: 3.2.0(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(supports-color@5.5.0)
       eslint: 10.10.0(supports-color@5.5.0)
       espree: 11.2.0
-      globals: 17.12.0
+      globals: 17.14.0
       postcss: 8.5.28
       postcss-selector-parser: 7.1.6
       synckit: 0.11.13
@@ -4626,7 +4626,7 @@ snapshots:
     dependencies:
       is-glob: 4.0.3
 
-  globals@17.12.0: {}
+  globals@17.14.0: {}
 
   globalthis@1.0.4:
     dependencies:
