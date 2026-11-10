@@ -1,7 +1,10 @@
 # https://help.github.com/en/articles/about-code-owners
 
 # すべてにプロデザを指定
-* @kufu/product-designer
+# * @kufu/product-designer
 
 # コラム配下に全員を指定
-**/columns/ @oremega @ysasaki10 @ouji-miyahara @uknmr @versionfive @kgsi @daxelbook @wentzzz @ayumizu @drivesketch @tosiiu
+# **/columns/ @oremega @ysasaki10 @ouji-miyahara @uknmr @versionfive @kgsi @daxelbook @wentzzz @ayumizu @drivesketch @tosiiu
+
+# 状況が整うまで oti がメンテする
+* @oti
