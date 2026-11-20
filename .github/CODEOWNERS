@@ -1,7 +1,9 @@
 # https://help.github.com/en/articles/about-code-owners
 
+## レビュー環境が整っていないので一旦外す
 # すべてにプロデザを指定
-* @kufu/product-designer
+# * @kufu/product-designer
 
+## レビュー環境が整っていないので一旦外す
 # コラム配下に全員を指定
-**/columns/ @oremega @ysasaki10 @ouji-miyahara @uknmr @versionfive @kgsi @daxelbook @wentzzz @ayumizu @drivesketch @tosiiu
+# **/columns/ @oremega @ysasaki10 @ouji-miyahara @uknmr @versionfive @kgsi @daxelbook @wentzzz @ayumizu @drivesketch @tosiiu
